@@ -37,54 +37,72 @@
 
 
 
-        <div class="product-main flex">
+        <div class="product-main flex-center">
 
           <div class="product-images">
-          {% assign main_product = all_products[section.settings.main_product] %}
-
-          {% for image in main_product.images %}
-            {% if forloop.length <= 2 %}
-                {% assign thumbnail_width = 'product-image--100' %}
-            {% elsif forloop.length == 3 %}
-              {% assign thumbnail_width = 'product-image--50' %}
-            {% elsif forloop.length == 4 %}
-              {% assign thumbnail_width = 'product-image--33' %}
-            {% else %}
-              {% assign thumbnail_width = 'product-image--25' %}
-            {% endif %}
-            {% assign length = forloop.length %}
-
-            <h1>{{ image.src }}</h1>
+              {% assign main_product = all_products[section.settings.main_product] %}
 
 
+                <div class="carousel carousel-main" data-flickity='{ "pageDots": false  }' >
+                  {% for image in main_product.images %}
+                    <div class="carousel-cell" style="background: url({{ image | product_img_url: 'master'}})"></div>
+                  {% endfor %}
+                </div>
 
-
-          {% endfor %}
-
-
-
-
-
-
-
+                <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }' >
+                  {% for image in main_product.images %}
+                    <div class="carousel-cell" style="background: url({{ image | product_img_url: 'master'}})"></div>
+                  {% endfor %}
+                </div>
           </div>
 
-          <div class="product-description">
+          <div class="product-description flex-center">
               {% for block in section.blocks %}
               {% assign product = all_products[block.settings.product] %}
               {% assign section_images = ["value1"] %}
+              {%- assign image = block.settings.picto -%}
 
-              <div class="subscription-item__description">
-                  {{ block.settings.contenu }}
+              <div class="abonnements-items">
+
+                <div class="product_img">
+
+                  <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
+                </div>
+
+                <div class="product-id">
+                  <h1>{{ product.id }}</h1>
+                </div>
+
+                <h1>{{ product.available }}</h1>
+
+                  {% form 'product', product, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
+                    <div class="productForm-block no-show">
+                      <select id="product-bar-select" name="id">
+                      {% for variant in product.variants %}
+                        <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" data-sku="{{variant.sku}}">
+                        {{ variant.title }} - {{ variant.price | money | strip_html }}
+                        </option>
+                      {% endfor %}
+                      </select>
+                    </div>
+
+                    <input type="hidden" class="inputCounter" name="quantity" value="1" />
+
+                    <div class="productForm-block">
+                      {% for variant in product.variants %}
+                         <button class="productForm-submit js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">price {{ variant.price | money | strip_html }}</button>
+                      {% endfor %}
+                    </div>
+                  {% endform %}
+
+
               </div>
-
+              {% endfor %}
           </div>
 
 
         </div>
 
-
-      {% endfor %}
     </div>
 
     <div class="subscription__inner">
@@ -161,7 +179,14 @@
 </div>
 
 
+<script>
+  $('.carousel').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true
+  });
 
+</script>
 
 <script>
   $('.js-subscription').click(function(evt){
@@ -236,6 +261,11 @@
             "id": "product",
       "label": "Choisir un produit"
           },
+            {
+              "type": "image_picker",
+              "id": "picto",
+              "label": "choisir un picto"
+            },
           {
              "type": "color",
              "id": "background_color",

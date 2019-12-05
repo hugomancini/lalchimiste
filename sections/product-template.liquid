@@ -88,28 +88,28 @@
 							{% endfor %}
 						</div>
 
-						{% if product.images.size > 1 %}
-						<div class="productImgSlider-nav js-productImgSlider-nav">
-							{% for image in product.images %}
-								{% assign image_widths = '295,394,590,700,800,1000,1200,1500,1800,2000,2400' %}
-								{% include 'theme-rias' %}
-									<div class="js-slide {{ thumbnail_width }} product-image-thumb {% if forloop.index == 1 %}active{% endif %}">
-											<img
-												 class="lazyload fade-in product-image-thumb {% if forloop.index == 1 %}active{% endif %}-img"
-												 data-src="{{ image_url_pattern }}"
-												 data-widths= "[{{ image_widths }}]"
-												 data-aspectratio="{{image.aspect_ratio }}"
-												 data-sizes="auto"
-												 alt="{{ image.alt | escape }}"
-												 itemprop="image"
-												 >
-											<noscript>
-												<img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}">
-											</noscript>
-									</div>
-							{% endfor %}
-						</div>
-						{% endif %}
+  						{% if product.images.size > 1 %}
+  						<div class="productImgSlider-nav js-productImgSlider-nav">
+  							{% for image in product.images %}
+  								{% assign image_widths = '295,394,590,700,800,1000,1200,1500,1800,2000,2400' %}
+  								{% include 'theme-rias' %}
+  									<div class="js-slide {{ thumbnail_width }} product-image-thumb {% if forloop.index == 1 %}active{% endif %}">
+  											<img
+  												 class="lazyload fade-in product-image-thumb {% if forloop.index == 1 %}active{% endif %}-img"
+  												 data-src="{{ image_url_pattern }}"
+  												 data-widths= "[{{ image_widths }}]"
+  												 data-aspectratio="{{image.aspect_ratio }}"
+  												 data-sizes="auto"
+  												 alt="{{ image.alt | escape }}"
+  												 itemprop="image"
+  												 >
+  											<noscript>
+  												<img src="{{ image | img_url: 'master' }}" alt="{{ image.alt | escape }}">
+  											</noscript>
+  									</div>
+  							{% endfor %}
+  						</div>
+  						{% endif %}
 					{% else %}
 						<div id="HUGO" class="productImgScroller js-productImgScroller js-productImgContainer" data-gallery="{{ image_gallery }}" data-dots="{{ dots }}" data-arrows="{{ arrows }}" data-zoom="{{ zoom }}">
 							{% for image in product.images %}
