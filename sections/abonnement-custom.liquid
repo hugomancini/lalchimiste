@@ -9,7 +9,10 @@
   {% when 4 %}
      {% assign grid_size = "s1 sm_s12 lg_s14" %}
 {% endcase %}
-
+{% assign title = section.settings.product_title %}
+{% assign description = section.settings.product_description %}
+{% assign value_proposition = section.settings.value_proposition %}
+-
 <div class="subscription-page">
   <div class="subscription-page__container">
 
@@ -39,7 +42,7 @@
 
         <div class="product-main flex-center">
 
-          <div class="product-images">
+          <div class="product-images flex-center-vertical">
               {% assign main_product = all_products[section.settings.main_product] %}
 
 
@@ -49,135 +52,147 @@
                   {% endfor %}
                 </div>
 
-                <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }' >
+                <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "wrapAround": true, "pageDots": false }' >
                   {% for image in main_product.images %}
-                    <div class="carousel-cell" style="background: url({{ image | product_img_url: 'master'}})"></div>
+                  <div class="carousel-cell">
+                    <div class="carousel-image" style="background: url({{ image | product_img_url: 'master'}})"></div>
+                  </div>
                   {% endfor %}
                 </div>
           </div>
 
-          <div class="product-description flex-center">
-              {% for block in section.blocks %}
-              {% assign product = all_products[block.settings.product] %}
-              {% assign section_images = ["value1"] %}
-              {%- assign image = block.settings.picto -%}
-
-              <div class="abonnements-items">
-
-                <div class="product_img">
-
-                  <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
-                </div>
-
-                <div class="product-id">
-                  <h1>{{ product.id }}</h1>
-                </div>
-
-                <h1>{{ product.available }}</h1>
-
-                  {% form 'product', product, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
-                    <div class="productForm-block no-show">
-                      <select id="product-bar-select" name="id">
-                      {% for variant in product.variants %}
-                        <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" data-sku="{{variant.sku}}">
-                        {{ variant.title }} - {{ variant.price | money | strip_html }}
-                        </option>
-                      {% endfor %}
-                      </select>
-                    </div>
-
-                    <input type="hidden" class="inputCounter" name="quantity" value="1" />
-
-                    <div class="productForm-block">
-                      {% for variant in product.variants %}
-                         <button class="productForm-submit js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">price {{ variant.price | money | strip_html }}</button>
-                      {% endfor %}
-                    </div>
-                  {% endform %}
+          <div class="product_description">
 
 
+              <div class="description-block">
+                  <h1 class="">{{ title }}</h1>
+
+                <p>{{ value_proposition }}</p>
+                <p>{{ description }}</p>
               </div>
-              {% endfor %}
+
+              <div class="abonnement-part">
+                <div class="abo-step">
+                  <h2 class="">1. Choisissez votre abonnement</h2>
+                </div>
+
+                <div class="item-blocks flex-center">
+
+
+
+                {% for block in section.blocks %}
+                {% assign product = all_products[block.settings.product] %}
+                {% assign section_images = ["value1"] %}
+                {%- assign image = block.settings.picto -%}
+                {%- assign title = block.settings.titleAbo -%}
+                {%- assign contenu = block.settings.contenu -%}
+
+                  <div class="abonnements-items flex-center-vertical text-center">
+
+                    <h2> {{ title }} </h2>
+
+                    <p class="frequency" style="width: 66%;"> {{ contenu }} </p>
+
+
+                    <div class="product_img">
+
+                      <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
+                    </div>
+
+                      {% form 'product', product, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
+
+                        <input type="hidden" class="inputCounter" name="quantity" value="1" />
+
+                        <div class="productForm-block flex-center">
+                          {% for variant in product.variants %}
+                          <div class="btn_holder">
+                             <button class=" js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">{{ variant.price | money | strip_html }}</button>
+                          </div>
+                          {% endfor %}
+                        </div>
+                      {% endform %}
+                  </div>
+                  {% endfor %}
+              </div>
+
+              <div class="routine-products-part">
+                <div class="abo-step">
+                  <h2>2. Choisissez votre routine lessive !</h2>
+                </div>
+
+                <div class="routine-products flex-center">
+                  {% assign product_routine_a = all_products[section.settings.product_routine_a] %}
+                  {% assign product_routine_b = all_products[section.settings.product_routine_b] %}
+                  {%- assign image_routine_a = section.settings.image_routine_a -%}
+                  {%- assign image_routine_b = section.settings.image_routine_b -%}
+
+
+                  <div class="routine-product flex-center-vertical text-center" id="doseur">
+                    <h2> {{ product_routine_a.title }} </h2>
+
+                    <div class="product_img">
+
+                      <img src="{{ image_routine_a | img_url: '1024x' }}" alt="{{ image_routine_a.alt | escape }}">
+                    </div>
+
+                      {% form 'product', product_routine_a, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
+                        <div class="productForm-block no-show">
+                          <select id="product-bar-select" name="id">
+                          {% for variant in product_routine_a.variants %}
+                            <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" data-sku="{{variant.sku}}">
+                            {{ variant.title }} - {{ variant.price | money | strip_html }}
+                            </option>
+                          {% endfor %}
+                          </select>
+                        </div>
+
+                        <input type="hidden" class="inputCounter" name="quantity" value="1" />
+
+                        <div class="productForm-block flex-center">
+                             <button class="custom-form-button js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">{{ product_routine_a.variants.first.price | money | strip_html }}</button>
+                        </div>
+                      {% endform %}
+
+                  </div>
+
+                  <div class="routine-product flex-center-vertical text-center" id="stick">
+                    <h2> {{ product_routine_b.title }} </h2>
+
+                    <div class="product_img">
+
+                      <img src="{{ image_routine_b | img_url: '1024x' }}" alt="{{ image_routine_b.alt | escape }}">
+                    </div>
+
+                      {% form 'product', product_routine_b, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
+                        <div class="productForm-block no-show">
+                          <select id="product-bar-select" name="id">
+                          {% for variant in product_routine_b.variants %}
+                            <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" data-sku="{{variant.sku}}">
+                            {{ variant.title }} - {{ variant.price | money | strip_html }}
+                            </option>
+                          {% endfor %}
+                          </select>
+                        </div>
+
+                        <input type="hidden" class="inputCounter" name="quantity" value="1" />
+
+                        <div class="productForm-block flex-center">
+                             <button class="custom-form-button js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">{{  product_routine_b.variants.first.price| money | strip_html }}</button>
+                        </div>
+                      {% endform %}
+
+                  </div>
+
+
+                </div>
+              </div>
+
           </div>
+
+          <div class="button" id="go-cart-btn" style="color: {{ section.settings.go_cart_btn_color }}; background-color: {{ section.settings.go_cart_btn_bg_color }} "><a href="https://www.lalchimiste.paris/cart">{{ section.settings.go_cart_btn }}</a></div>
 
 
         </div>
-
-    </div>
-
-    <div class="subscription__inner">
-      <div class="container-wrap">
-        <div class="container">
-          <div class="row row--flex row--flex_column">
-
-            {% for block in section.blocks %}
-              {% assign product = all_products[block.settings.product] %}
-              <div class="subscription-item block {{ grid_size }} animated fadeInUp" >
-                <div class="subscription-item__inner" style="background-color: {{block.settings.background_color}};color:{{block.settings.typo_color}};">
-
-                  <h2 class="subscription-title" style="color:{{block.settings.typo_color}};">{{ block.settings.titleColone }}</h2>
-
-                  <div class="subscription-item__description">
-                      {{ block.settings.contenu }}
-                  </div>
-
-                  <div class="subscription-item__price">
-                    {{ product.price | money }}
-                    <div class="subscription-item__price--condition">
-                      tous les {{product.metafields.subscriptions.shipping_interval_frequency}} mois
-                    </div>
-                  </div>
-
-                  <div class="subscription-item__form">
-
-                    {% assign sold_out = true %}
-                    {% if product.available %}
-                    {% assign sold_out = false %}
-                    {% endif %}
-
-
-                    {% unless sold_out %}{% include 'subscription-product' %}{% endunless %}
-
-                    <form id="add-item-form--{{ product.id }}" action="/cart/add" method="post" data-productid="{{product.id}}">
-
-                      <input type="hidden" name="id" value="{{ product.variants.first.id }}" data-productid="{{product.id}}" />
-            <div class="subscription-item__submit">
-                        <button class="productForm-submit js-subscription"
-                                style="color: {{block.settings.typo_color}}!important;"
-                                type="submit"
-                                name="checkout"
-                                data-handle="{{product.handle}}"
-                                data-id="{{ product.variants.first.id }}"
-                                data-interval-frequency="{{product.metafields.subscriptions.shipping_interval_frequency}}"
-                                data-interval-type="{{product.metafields.subscriptions.shipping_interval_unit_type}}"
-                                data-subscription="{{product.metafields.subscriptions.subscription_id}}"
-                                {% if sold_out %}disabled{% endif %}>
-                          {% unless sold_out %}
-                            S'abonner
-                          {% else %}
-                            {{ 'products.form.sold_out' | t }}
-                          {% endunless %}
-                        </button>
-                      </div>
-                    </form>
-
-                  </div>
-
-                  <div class="subscription-item__footer">
-                    Livraison incluse en France métropolitaine
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
 <script>
   $('.carousel').flickity({
@@ -233,12 +248,60 @@
       "type": "product",
       "id": "main_product",
       "label": "Choisir un produit pour les images"
-          },
+      },
+      {
+        "type": "text",
+        "id": "product_title",
+        "label": "Titre"
+      },
+      {
+        "type": "richtext",
+        "id": "value_proposition",
+        "label": "Proposition de valeur"
+      },
+      {
+        "type": "richtext",
+        "id": "product_description",
+        "label": "Texte de description"
+      },
+      {
+         "type": "product",
+         "id": "product_routine_a",
+        "label": "Choisir un produit de routine"
+      },
       {
         "type": "image_picker",
-        "id": "image",
-        "label": "Image de fond"
+        "id": "image_routine_a",
+        "label": "choisir un picto pour le produit de routine"
+      },
+      {
+         "type": "product",
+         "id": "product_routine_b",
+        "label": "Choisir un deuxième produit de routine"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_routine_b",
+        "label": "choisir un picto pour le produit de routine 2"
+      },
+      {
+        "type": "text",
+        "id": "go_cart_btn",
+        "label": "Texte du bouton de validation"
+      },
+      {
+        "type": "color",
+        "id": "go_cart_btn_color",
+        "label": "Couleur texte bouton",
+        "default": "#fafafa"
+      },
+      {
+        "type": "color",
+        "id": "go_cart_btn_bg_color",
+        "label": "Couleur du fond du bouton",
+        "default": "#333"
       }
+
     ],
   "max_blocks": 4,
     "blocks": [
@@ -248,18 +311,18 @@
         "settings": [
           {
             "type": "text",
-            "id": "titleColone",
+            "id": "titleAbo",
             "label": "Titre"
           },
           {
             "type": "richtext",
             "id": "contenu",
-      "label": "Contenu"
+            "label": "Contenu"
       },
           {
             "type": "product",
             "id": "product",
-      "label": "Choisir un produit"
+            "label": "Choisir un produit"
           },
             {
               "type": "image_picker",

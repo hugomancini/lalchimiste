@@ -12,17 +12,16 @@
 
 <div class="subscription-page" style="background-image: url('{{section.settings.image | img_url: "original" }}');">
   <div class="subscription-page__container">
-
     {%- if section.settings.show_page_title -%}
       <section class="page-title container-wrap ">
         <div class="container">
           <div class="row row-lg inline u-center">
-            <h1 class="subscription-page_mainTitle">HELLO ! {{ page.title }}</h1>
+            <h1 class="subscription-page_mainTitle">{{ page.title }}</h1>
           </div>
         </div>
       </section>
     {%- endif -%}
-
+   
     {% unless page.content %}
     <div class="container-wrap">
       <div class="container text-content rte">
@@ -37,18 +36,18 @@
       <div class="container-wrap">
         <div class="container">
           <div class="row row--flex row--flex_column">
-
+            
             {% for block in section.blocks %}
               {% assign product = all_products[block.settings.product] %}
               <div class="subscription-item block {{ grid_size }} animated fadeInUp" >
                 <div class="subscription-item__inner" style="background-color: {{block.settings.background_color}};color:{{block.settings.typo_color}};">
-
+                  
                   <h2 class="subscription-title" style="color:{{block.settings.typo_color}};">{{ block.settings.titleColone }}</h2>
-
-                  <div class="subscription-item__description">
+                  
+                  <div class="subscription-item__description"> 
                       {{ block.settings.contenu }}
                   </div>
-
+                  
                   <div class="subscription-item__price">
                     {{ product.price | money }}
                     <div class="subscription-item__price--condition">
@@ -70,15 +69,15 @@
 
                       <input type="hidden" name="id" value="{{ product.variants.first.id }}" data-productid="{{product.id}}" />
 						<div class="subscription-item__submit">
-                        <button class="productForm-submit js-subscription"
+                        <button class="productForm-submit js-subscription" 
                                 style="color: {{block.settings.typo_color}}!important;"
-                                type="submit"
-                                name="checkout"
+                                type="submit" 
+                                name="checkout" 
                                 data-handle="{{product.handle}}"
-                                data-id="{{ product.variants.first.id }}"
-                                data-interval-frequency="{{product.metafields.subscriptions.shipping_interval_frequency}}"
-                                data-interval-type="{{product.metafields.subscriptions.shipping_interval_unit_type}}"
-                                data-subscription="{{product.metafields.subscriptions.subscription_id}}"
+                                data-id="{{ product.variants.first.id }}" 
+                                data-interval-frequency="{{product.metafields.subscriptions.shipping_interval_frequency}}" 
+                                data-interval-type="{{product.metafields.subscriptions.shipping_interval_unit_type}}" 
+                                data-subscription="{{product.metafields.subscriptions.subscription_id}}" 
                                 {% if sold_out %}disabled{% endif %}>
                           {% unless sold_out %}
                             S'abonner
@@ -88,26 +87,23 @@
                         </button>
                       </div>
                     </form>
-
+                    
                   </div>
-
+                  
                   <div class="subscription-item__footer">
-                    Livraison incluse en France métropolitaine
+                    Livraison incluse en France métropolitaine 
                   </div>
                 </div>
               </div>
             {% endfor %}
-
+            
           </div>
         </div>
       </div>
     </div>
-
+    
   </div>
 </div>
-
-
-
 
 <script>
   $('.js-subscription').click(function(evt){
@@ -124,8 +120,8 @@
     data = {
       "quantity": quantity,
       "id": variant_id,
-      "properties[shipping_interval_frequency]": shipping_interval_frequency,
-      "properties[shipping_interval_unit_type]": shipping_interval_unit_type,
+      "properties[shipping_interval_frequency]": shipping_interval_frequency, 
+      "properties[shipping_interval_unit_type]": shipping_interval_unit_type,            
       "properties[subscription_id]": subscription_id
     }
     jQuery.ajax({
@@ -133,8 +129,8 @@
       url: '/cart/add.js',
       data: data,
       dataType: 'json',
-      success: function() {
-        window.location.href = '/cart';
+      success: function() { 
+        window.location.href = '/cart'; 
       }
     });
   }

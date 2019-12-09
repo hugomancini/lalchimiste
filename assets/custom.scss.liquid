@@ -1,4 +1,6 @@
 
+
+
 // section icon-row-bis
 
   .no-show {
@@ -35,6 +37,36 @@
   }
 
 
+//subscription page
+
+  .subscription-page__container {
+    width: 100vw!important;
+
+    .title-module {
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+      padding-top: 0px !important;
+      padding-top: 0px !important;
+    }
+
+    #shopify-section-rich-text {
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+      padding-top: 0px !important;
+      padding-top: 0px !important;
+      .container {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+      }
+      .button-wrap {
+        a {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+
   // section image-block
 
   .image-block {
@@ -45,18 +77,32 @@
 // custom abonnements
 
 .product-main {
+  margin-bottom: 50px;
 }
 
-.product-description {
-  background-color: darkgreen;
-    height:100vh;
-    width:500px;
+.custom-form-button {
+  width: 20px;
+}
+
+.product_description {
+    padding:30px;
+    border: solid #B0B7A8 4px;
+    width:40vw;
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+.abo-step {
+  border-bottom: solid black 1px;
+  padding-bottom: 5px;
 }
 
 .product-images {
-  background-color: blue;
-  height:100vh;
-  width:500px;
+  padding: 20px;
+  padding-top: 0px!important;
+  width:40vw;
 }
 
 // carousel
@@ -67,47 +113,123 @@
 
   body { font-family: sans-serif; }
 
-  .carousel {
+
+
+  .carousel-main {
     background: #FAFAFA;
     margin-bottom: 40px;
     width: 400px;
     height:603px;
+
+    .flickity-button-icon {
+      display:none;
+    }
+
+    .carousel-cell {
+      width: 400px;
+      height: 600px;
+      margin-right: 10px;
+      background: #8C8;
+      border-radius: 5px;
+      background-size: contain !important;
+    }
+
   }
 
-  .carousel-cell {
-    width: 400px;
-    height: 600px;
-    margin-right: 10px;
-    background: #8C8;
-    border-radius: 5px;
+  .abonnements-items {
+    min-width: 160px;
+
+    .productForm {
+      width: 66%;
+    }
+
+    .frequency {
+      width: 66%;
+    }
+
+    .btn_holder {
+      button {
+        width: 100% !important;
+        width: 100%;
+        color: black;
+        background-color: white;
+        border: solid 2px;
+      }
+    }
   }
 
   /* cell number */
-  .carousel-cell:before {
-    display: block;
-    text-align: center;
-    content: counter(carousel-cell);
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
-  }
 
   .carousel-nav {
-    width:300px;
-    height: 80px !important;
+    background: #fff;
+    margin-bottom: 40px;
+    width:400px;
+    height: 160px !important;
+
+      .previous {
+        padding-left: 0px !important;
+        svg {
+          margin-left: -11px;
+        }
+      }
+
+      .next {
+        padding-right: 0px !important;
+      }
+
+     .previous, .next {
+      height: 160px;
+      width:56px;
+      position: absolute;
+      background-color: white !important;
+      border-radius: 0 !important;
+
+      svg {
+        position: relative !important;
+      }
+    }
   }
 
   .carousel-nav .carousel-cell {
-    height: 80px;
-    width: 100px;
+    margin: 0 10px;
+    height: 160px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+
+  .carousel-nav .carousel-image {
+    height: 136px;
+    width: 136px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover!important;
+
+  }
+
+
 
   .carousel-nav .carousel-cell:before {
     font-size: 50px;
     line-height: 80px;
   }
 
-  .carousel-nav .carousel-cell.is-nav-selected {
-    background: #ED2;
+
+
+@media (max-width: 1250px) {
+  .flex-center {
+      flex-direction: column;
+      align-items: center;
+      }
+
+  .product_description {
+      padding: 20px;
+      width: 92vw;
   }
+}
+
+
 

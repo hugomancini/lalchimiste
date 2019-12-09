@@ -8,6 +8,8 @@
 {% assign link = section.settings.link %}
 {% assign accent_line = section.settings.accent_line %}
 {% assign accent_line_color = section.settings.accent_line_color %}
+{% assign bg_color = section.settings.bg_color %}
+{% assign text_color = section.settings.text_color %}
 
 {%- if accent_line_color != blank -%}
 <style>
@@ -73,18 +75,18 @@
 				"id": "title",
 				"label": "Heading",
 				"default":"Describe your products or brand in detail here"
-			}, 
+			},
 			{
 				"type": "richtext",
 				"id": "content",
 				"label": "Text",
 				"default":"<p>Modular is a powerful Shopify theme that will set you apart from the rest. It features ample space to showcase your imagery with Mosaic, Gallery, and Slideshow sections.</p>"
-			}, 
+			},
 			{
 				"type": "text",
 				"id": "cta",
 				"label": "Button label"
-			}, 
+			},
 			{
 				"type": "url",
 				"id": "link",
@@ -103,16 +105,28 @@
 			},
 			{
 				"type": "color",
-				"id": "accent_line_color",
-				"label": "Color",
-				"default": "#333"
-			}
-		],
+				"id": "bg_color",
+				"label": "Background color",
+				"default": "#000000"
+			},
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "accent_line_color",
+        "label": "Color",
+        "default": "#333"
+      }
+      ],
 		"presets": [
 			{
 				"category": "Text",
 				"name": "Rich text"
-			} 
+			}
 		]
 	}
 {% endschema %}

@@ -696,6 +696,271 @@
           "cta": "EN SAVOIR PLUS",
           "link": "shopify:\/\/pages\/ingredients"
         }
+      },
+      "icons-row-bis": {
+        "type": "icons-row-bis",
+        "blocks": {
+          "1575404911982": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "title": "SIMPLICITÉ",
+              "content": "Livré chez vous gratuitement",
+              "show_borders": false
+            }
+          },
+          "1575405071900": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "title": "FLEXIBILITÉ",
+              "content": "Résiliez ou mettez en pause quand vous voulez en 1 clic",
+              "show_borders": false
+            }
+          },
+          "1575405127359": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "title": "PERSONNALISÉ",
+              "content": "Des formules adaptées à vos besoins",
+              "show_borders": false
+            }
+          }
+        },
+        "block_order": [
+          "1575404911982",
+          "1575405071900",
+          "1575405127359"
+        ],
+        "settings": {
+          "color_icons_bg": "#fafafa",
+          "color_icons_text": "#333",
+          "row-title": "Abonnez-vous",
+          "subtitle": "Sous-titrez ici",
+          "show_long_text": false,
+          "text-over-icons": "Modular is a powerful Shopify theme that will set you apart from the rest with Mosaic, Gallery, and Slideshow sections.",
+          "subtext": "",
+          "show_button": false,
+          "sub-cta": "En savoir plus"
+        }
+      },
+      "icons-row-third": {
+        "type": "icons-row-third",
+        "blocks": {
+          "1575407983381": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/verrecontenant.png",
+              "title": "NATUREL",
+              "content": "Une formule ultra clean, hypoallergénique et sans parfum",
+              "show_borders": false
+            }
+          },
+          "1575408052577": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "title": "ZÉRO DECHET",
+              "content": "Contenants en verre réutilisables à l'infini",
+              "show_borders": false
+            }
+          },
+          "1575408090603": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "title": "MADE IN FRANCE",
+              "content": "Fabrication artisanale au cœur de la Provence",
+              "show_borders": false
+            }
+          }
+        },
+        "block_order": [
+          "1575407983381",
+          "1575408052577",
+          "1575408090603"
+        ],
+        "settings": {
+          "color_icons_bg": "#a4b4a0",
+          "color_icons_text": "#ffffff",
+          "row-title": "Le soin du linge responsable",
+          "subtitle": "",
+          "show_long_text": true,
+          "text-over-icons": "Modular is a powerful Shopify theme that will set you apart from the rest with Mosaic, Gallery, and Slideshow sections.",
+          "subtext": "Subtext",
+          "show_button": true,
+          "sub-cta": "En savoir plus"
+        }
+      },
+      "image-block-row": {
+        "type": "image-block-row",
+        "blocks": {
+          "1575409511511": {
+            "type": "text",
+            "settings": {
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Kit_decouverte_2.jpg?v=1573032467",
+              "text_color": "#ffffff",
+              "title": "Feature",
+              "sub-title": "Feature",
+              "cta": "Je m'abonne",
+              "link": "",
+              "cta_color": "#ffffff",
+              "cta_bg": "#333333",
+              "cta_border": "#333333"
+            }
+          },
+          "1575409521123": {
+            "type": "text",
+            "settings": {
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Recharge_lessive_poudre.jpg?v=1573031876",
+              "text_color": "#ffffff",
+              "title": "Feature",
+              "sub-title": "Feature",
+              "cta": "Je m'abonne",
+              "link": "",
+              "cta_color": "#ffffff",
+              "cta_bg": "#333333",
+              "cta_border": "#333333"
+            }
+          },
+          "1575409530546": {
+            "type": "text",
+            "settings": {
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Le_savon.jpg?v=1559288888",
+              "text_color": "#ab4848",
+              "title": "Feature",
+              "sub-title": "Feature",
+              "cta": "Je m'abonne",
+              "link": "",
+              "cta_color": "#ffffff",
+              "cta_bg": "#333333",
+              "cta_border": "#333333"
+            }
+          }
+        },
+        "block_order": [
+          "1575409511511",
+          "1575409521123",
+          "1575409530546"
+        ],
+        "settings": {}
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "blocks": {
+          "1575412607736": {
+            "type": "testimonial",
+            "settings": {
+              "blockquote": "Je crois que mon linge n'a jamais été aussi doux et ma lessive aussi belle :) Bravo pour votre transparence et votre engagement. Je ne suis pas loin d'aimer faire ma lessive depuis que j'utilise vos produits !",
+              "author": "Marie"
+            }
+          },
+          "1575449185671": {
+            "type": "testimonial",
+            "settings": {
+              "blockquote": "vec 3 enfants à la maison, je n'ai vraiment pas de temps à accorder à la fabrication de ma lessive alors merci de le faire pour nous. Ravie d'en finir enfin avec les bidons en plastique et les produits chimiques, j'avais très envie de découvrir la lessive maison !",
+              "author": "Aurélie"
+            }
+          },
+          "1575449233645": {
+            "type": "testimonial",
+            "settings": {
+              "blockquote": "Mon linge est parfaitement propre et je suis fan de l'odeur du savon de Marseille ! Un plus pour pour la réactivité du service client qui a pris le temps de répondre à toutes mes questions.",
+              "author": "Jules"
+            }
+          }
+        },
+        "block_order": [
+          "1575412607736",
+          "1575449185671",
+          "1575449233645"
+        ],
+        "settings": {
+          "title": "Les retours de nos alchimistes",
+          "title_position": "center",
+          "blocks_text_align": "justify",
+          "hide_quotes": true,
+          "columns": 3,
+          "accent_line": "none",
+          "accent_line_color": "#333333"
+        }
+      },
+      "abonnement-custom": {
+        "type": "abonnement-custom",
+        "blocks": {
+          "1575493358135": {
+            "type": "text",
+            "settings": {
+              "titleColone": "AZAZ",
+              "contenu": "<p>AZAZAZ<\/p>",
+              "product": "copie-de-abonnement-lessive-liquide-8-recharges",
+              "wash_count": "",
+              "picto": "shopify:\/\/shop_images\/24lavages.png",
+              "frequency": "",
+              "background_color": "",
+              "typo_color": ""
+            }
+          },
+          "1575493384628": {
+            "type": "text",
+            "settings": {
+              "titleColone": "ASASAS",
+              "contenu": "<p>ZDDZDZD<\/p>",
+              "product": "copie-de-abonnement-lessive-liquide-2-recharges",
+              "wash_count": "",
+              "picto": "shopify:\/\/shop_images\/48lavages.png",
+              "frequency": "",
+              "background_color": "",
+              "typo_color": ""
+            }
+          },
+          "1575493400721": {
+            "type": "text",
+            "settings": {
+              "titleColone": "ASASAS",
+              "contenu": "<p>ASASAS<\/p>",
+              "product": "abo-family-lessive-poudre",
+              "wash_count": "2 à 3 lavages par semaine",
+              "picto": "shopify:\/\/shop_images\/96lavages.png",
+              "frequency": "",
+              "background_color": "",
+              "typo_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "1575493358135",
+          "1575493384628",
+          "1575493400721"
+        ],
+        "settings": {
+          "show_page_title": false,
+          "main_product": "test",
+          "product_title": "Lessive en poudre",
+          "product_description": "<p>Dans mon premier kit je re&ccedil;ois :<br>une bouteille en verre réutilisable à l&rsquo;infini !<\/p>"
+        }
+      },
+      "abonnement-cusbis": {
+        "type": "abonnement-cusbis",
+        "settings": {
+          "product_layout": "slideshow",
+          "image_gallery": "zoom",
+          "image_size": "large",
+          "add_cart_position": "top",
+          "color_swatches": true,
+          "show_vendor": true,
+          "show_quantity": true,
+          "show_cart_bar": true,
+          "show_newsletter": true,
+          "text_newsletter": "<p>Notify me when this product is available:<\/p>",
+          "enable_payment_button": true,
+          "page_tab_1": "",
+          "page_tab_2": "",
+          "page_tab_3": "",
+          "product_slideshow_dots": false,
+          "product_slideshow_arrows": false
+        }
       }
     },
     "content_for_index": [

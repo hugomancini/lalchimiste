@@ -1,4 +1,4 @@
-{% comment %}
+{% comment %}  
 Icons row
 {% endcomment %}
 
@@ -62,11 +62,13 @@ Icons row
       "type": "text",
       "name": "Item",
       "settings": [
-       {
-         "type": "image_picker",
-         "id": "icon",
-         "label": "Icon"
-       },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon name",
+          "default": "Shop",
+          "info": "[Click here](https://iconsmind.com/view_icons/) to view the list of available icons. Example: Shop"
+        },
         {
           "type": "text",
           "id": "title",

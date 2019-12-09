@@ -6,16 +6,16 @@
 
 {% if title != blank or content != blank or cta != blank %}
 <section class="title-module container-wrap" id="text-module-{{ id }}" data-section-type="rich-text">
-	<div class="container pad-sm">
+	<div class="container pad-sm" style="background-color: {{ bg_color }}">
 		<div class="row {% if row_split %} row--split row-lg {% else %} row-sm {% endif %}">
 			{% if title != blank %}
-				<h4 class="size--{{ heading_size }} align--{{ heading_align }}">{{ title }}</h4>
+				<h4 class="size--{{ heading_size }} align--{{ heading_align }}" style="color: {{ text_color }}">{{ title }}</h4>
 			{% endif %}
 
 			{% include 'accent-line' %}
 
 			{% if content != blank %}
-				<div class="rich-content size--small {% if cta == blank %}no-button{% endif %}">{{ content }}</div>
+				<div style="color: {{ text_color }}" class="rich-content size--small {% if cta == blank %}no-button{% endif %}">{{ content }}</div>
 			{% endif %}
 		</div>
 
