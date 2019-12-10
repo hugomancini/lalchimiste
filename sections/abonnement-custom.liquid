@@ -20,7 +20,7 @@
       <section class="page-title container-wrap ">
         <div class="container">
           <div class="row row-lg inline u-center">
-            <h1 class="subscription-page_mainTitle">HELLO ! {{ page.title }}</h1>
+            <h1 class="subscription-page_mainTitle">{{ page.title }}</h1>
           </div>
         </div>
       </section>
@@ -65,7 +65,7 @@
 
 
               <div class="description-block">
-                  <h1 class="">{{ title }}</h1>
+                  <h1 class="main-product-title">{{ title }}</h1>
 
                 <p>{{ value_proposition }}</p>
                 <p>{{ description }}</p>
@@ -73,7 +73,7 @@
 
               <div class="abonnement-part">
                 <div class="abo-step">
-                  <h2 class="">1. Choisissez votre abonnement</h2>
+                  <p class="abo-title">1. CHOISISSEZ VOTRE ABONNEMENT</p>
                 </div>
 
                 <div class="item-blocks flex-center">
@@ -87,11 +87,11 @@
                 {%- assign title = block.settings.titleAbo -%}
                 {%- assign contenu = block.settings.contenu -%}
 
-                  <div class="abonnements-items flex-center-vertical text-center">
+                  <div class="abonnements-items flex-center-vertical text-center {% if block.settings.show_borders %} block_border {% endif %}">
 
-                    <h2> {{ title }} </h2>
+                    <div class="abo-product-title"> {{ title }} </div>
 
-                    <h6 class="frequency" style="width: 66%;"> {{ contenu }} </h6>
+                    <div class="frequency"> {{ contenu }} </div>
 
 
                     <div class="product_img">
@@ -103,7 +103,7 @@
 
                         <input type="hidden" class="inputCounter" name="quantity" value="1" />
 
-                        <div class="productForm-block flex-center">
+                        <div class="productForm-block flex-center" style="width: 100%;">
                           {% for variant in product.variants %}
                           <div class="btn_holder">
                              <button class=" js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">{{ variant.price | money | strip_html }}</button>
@@ -111,13 +111,16 @@
                           {% endfor %}
                         </div>
                       {% endform %}
+                      <div class="frequency-bis">
+                        <p>Tous les 2 mois</p>
+                      </div>
                   </div>
                   {% endfor %}
               </div>
 
               <div class="routine-products-part">
                 <div class="abo-step">
-                  <h2>2. Choisissez votre routine lessive !</h2>
+                  <p class="abo-title">2. CHOISISSEZ VOTRE ROUTINE LESSIVE</p>
                 </div>
 
                 <div class="routine-products flex-center">
@@ -128,12 +131,14 @@
 
 
                   <div class="routine-product flex-center-vertical text-center" id="doseur">
-                    <h2> {{ product_routine_a.title }} </h2>
 
                     <div class="product_img">
 
                       <img src="{{ image_routine_a | img_url: '1024x' }}" alt="{{ image_routine_a.alt | escape }}">
                     </div>
+
+                    <p class="routine-product-title"> {{ product_routine_a.title }} </p>
+
 
                       {% form 'product', product_routine_a, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
                         <div class="productForm-block no-show">
@@ -149,19 +154,21 @@
                         <input type="hidden" class="inputCounter" name="quantity" value="1" />
 
                         <div class="productForm-block flex-center">
-                             <button class="custom-form-button js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">{{ product_routine_a.variants.first.price | money | strip_html }}</button>
+                            <button class="custom-form-button js-productForm-submit " type="submit" name="checkout" data-handle="{{product.handle}}">+ {{ product_routine_a.variants.first.price | money | strip_html }}</button>
                         </div>
                       {% endform %}
 
                   </div>
 
                   <div class="routine-product flex-center-vertical text-center" id="stick">
-                    <h2> {{ product_routine_b.title }} </h2>
 
                     <div class="product_img">
 
                       <img src="{{ image_routine_b | img_url: '1024x' }}" alt="{{ image_routine_b.alt | escape }}">
                     </div>
+
+                    <p class="routine-product-title"> {{ product_routine_b.title }} </p>
+
 
                       {% form 'product', product_routine_b, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
                         <div class="productForm-block no-show">
@@ -177,7 +184,7 @@
                         <input type="hidden" class="inputCounter" name="quantity" value="1" />
 
                         <div class="productForm-block flex-center">
-                             <button class="custom-form-button js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">{{  product_routine_b.variants.first.price| money | strip_html }}</button>
+                             <button class="custom-form-button js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">+ {{  product_routine_b.variants.first.price| money | strip_html }}</button>
                         </div>
                       {% endform %}
 
@@ -255,14 +262,16 @@
         "label": "Titre"
       },
       {
-        "type": "richtext",
+        "type": "text",
         "id": "value_proposition",
-        "label": "Proposition de valeur"
+        "label": "Proposition de valeur",
+        "default": "AU SAVON DE MARSEILLE A L'HUILE D'OLIVE SANS PARFUM"
       },
       {
-        "type": "richtext",
+        "type": "text",
         "id": "product_description",
-        "label": "Texte de description"
+        "label": "Texte de description",
+        "default": "Description"
       },
       {
          "type": "product",
@@ -338,6 +347,12 @@
              "type": "color",
              "id": "typo_color",
              "label": "Couleur de la police"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_borders",
+            "label": "Show borders",
+            "default": false
           }
     ]
       }

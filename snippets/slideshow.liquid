@@ -22,7 +22,7 @@
 {% comment %} Layout {% endcomment %}
 {% assign alignment = section.settings.alignment %}
 {% assign contentWidth = section.settings.content_width %}
-			 
+
 {% comment %} Section {% endcomment %}
 <section class="container-wrap hero hero-slider js-hero-slider {% if parallax %}hero--parallax{% endif %} {% if transition == 'zoom-out' %}hero--zoom-out{% endif %} hero--is-loading hero--dots-{{ dots_position }} {{ section.settings.slide_height }}" id="slideshow-module-{{ section.id }}" data-section-type="slideshow" data-slick="{ 'arrows':{{ showNavArrows }}, 'dots':{{ showNavDots }}, 'autoplay':{{ autoplay }}, 'dotsClass':'slick-dots hero-dots-row row row-lg', 'autoplaySpeed':{{duration}}, 'speed':{{ speed }}, 'adaptiveHeight':{{ original_height }}, 'pauseOnHover':{{ hover }}, 'fade':{{ fadeMode }}, 'infinite':true }" data-image-height="{{section.settings.slide_height}}">
 	{% for block in section.blocks %}
@@ -30,7 +30,7 @@
 		{% comment %} Layout {% endcomment %}
 		{% assign alignment = block.settings.alignment %}
 		{% assign contentWidth = block.settings.content_width %}
-		
+
 		{% comment %} Colors {% endcomment %}
 		{% unless block.settings.overlay_color == blank %}
 			{% assign overlayColor = block.settings.overlay_color  %}
@@ -38,7 +38,7 @@
 			{% assign overlayColor = 'none' %}
 		{% endunless %}
 		{% assign overlayOpacity = block.settings.overlay_opacity | prepend: '.' %}
-		
+
 		{% assign color_style = block.settings.color_style %}
 
 		{% assign buttonPrimaryText = block.settings.cta_color %}
@@ -84,11 +84,11 @@
 									{% endif %}
 
 									{% if heading != blank %}
-										<h1 class="slide-content__heading size--{{ heading_size }}">{{ heading }}</h1>
+										<h1  class="slide-content__heading size--{{ heading_size }}">{{ heading }}</h1>
 									{% endif %}
 
 									{% if text != blank %}
-										<div class="slide-content__text size--{{ text_size }}">{{ text }}</div>
+										<div style="font-size: 1.1em" class="slide-content__text size--{{ text_size }}">{{ text }}</div>
 									{% endif %}
 
 									{% if cta != blank %}
@@ -118,7 +118,7 @@
 							{%- assign image = block.settings.image -%}
 							{%- assign image_widths = '295,394,590,700,800,1000,1200,1500,1800,2000,2400' -%}
 							{% include 'theme-rias' %}
-							<img 
+							<img
 								class="lazyload fade-in"
 								data-src="{{ image_url_pattern }}"
 								data-widths= "[{{ image_widths }}]"
@@ -135,7 +135,7 @@
 								{%- assign image = block.settings.image_mobile -%}
 								{%- assign image_widths = '295,394,590,700,800,1000,1200,1500,1800,2000,2400' -%}
 								{% include 'theme-rias' %}
-								<img 
+								<img
 									class="lazyload fade-in"
 									data-src="{{ image_url_pattern }}"
 									data-widths= "[{{ image_widths }}]"
@@ -148,7 +148,7 @@
 							</div>
 						{%- endif -%}
 					</div>
-					
+
 					{%- else -%}
 						<div class="slide-background-container {% if has_mobile_image %}slide-background--has-mobile{% endif %}">
 							{%- assign image = block.settings.image -%}
@@ -163,7 +163,7 @@
 								style="background-image:url('{{ block.settings.image | img_url: '2048x' }}');"
 								></div>
 							</noscript>
-							
+
 							{%- if has_mobile_image -%}
 								{%- assign image = block.settings.image_mobile -%}
 								<div class="slide-background slide-background--mobile slide-background--{{ block.settings.image_position }} lazyload fade-in"
@@ -179,7 +179,7 @@
 								</noscript>
 							{%- endif -%}
 						</div>
-							
+
 					{%- endif -%}
 				{%- else -%}
 					{%- if original_height -%}

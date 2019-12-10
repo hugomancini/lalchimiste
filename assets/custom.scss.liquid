@@ -1,7 +1,84 @@
+// fonts
+
+@font-face {
+    font-family: 'ambroiselight';
+    src: url('ambroise-light_2-webfont.woff2') format('woff2'),
+         url('ambroise-light_2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:'ambroiselight';
+  font-weight:500 !important;
+}
+
+.main-product-title, .testimonial-heading {
+  font-size: 4em !important;
+  font-weight: 500;
+  margin-bottom: 20px;
+
+}
+
+.abo-title {
+    font-size: 1.3em !important;
+    margin-bottom: 8px;
+}
+
+.abo-product-title {
+  font-size: 1.1em !important;
+}
+
+.frequency {
+  p {
+    font-size: 0.8em !important;
+  }
+}
+
+.frequency-bis {
+  p {
+    font-size: 0.7em !important;
+  }
+  margin-top:0;
+}
+
+.routine-product-title {
+  font-size:1.1em !important;
+}
+
+.image-blocks-subtitle {
+  font-size:1.1em !important;
+
+}
+
+.image-blocks-title {
+  margin-top: 144px;
+  font-size:2rem !important;
+}
+
+.container {
+  max-width: 2600px !important;
+}
 
 
+//
 
 // section icon-row-bis
+
+  .icons-row-title {
+    font-size:3.5em !important;
+  }
+
+  .icons-row-subtitle {
+    font-size:2em;
+  }
+
+  .icons-row__item {
+    .icons-row__content {
+      font-size: 1.3em !important;
+      max-width: 267px;
+    }
+  }
 
   .no-show {
     display:none;
@@ -34,6 +111,15 @@
   }
 
   .subpart {
+  }
+
+  .icons-row__text_over_icons {
+    font-size: 1.5em;
+  }
+
+  .icons-row__title {
+    font-size: 1.5em;
+    font-weight: 900;
   }
 
 
@@ -70,7 +156,10 @@
   // section image-block
 
   .image-block {
-    height: 300px !important;
+    height: 513px !important;
+    background-size: cover;
+    max-width: 33.4%;
+
   }
 
 
@@ -81,7 +170,10 @@
 }
 
 .custom-form-button {
-  width: 20px;
+    width: 100% !important;
+    color: black;
+    background-color: white;
+    border: solid 2px;
 }
 
 .product_description {
@@ -90,6 +182,7 @@
     width:519px;
     display:flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .description-block {
@@ -102,10 +195,17 @@
   padding-bottom: 5px;
 }
 
+
+
 .product-images {
+  position: relative;
   padding: 20px;
   padding-top: 0px!important;
   width:519px;
+}
+
+#go-cart-btn {
+  margin: 15px 0px;
 }
 
 // carousel
@@ -122,7 +222,9 @@
     background: #FAFAFA;
     margin-bottom: 40px;
     width: 519px;
-    height: 950px;
+    height: 833px;
+    position:absolute;
+    top:0;
 
 
     .flickity-button-icon {
@@ -131,36 +233,13 @@
 
     .carousel-cell {
       width: 519px;
-      height: 940px;
+      height: 831px;
       margin-right: 10px;
       background: #8C8;
       border-radius: 5px;
       background-size: contain !important;
     }
 
-  }
-
-  .abonnements-items {
-    min-width: 160px;
-    margin: 10px;
-
-    .productForm {
-      width: 66%;
-    }
-
-    .frequency {
-      width: 66%;
-    }
-
-    .btn_holder {
-      button {
-        width: 100% !important;
-        width: 100%;
-        color: black;
-        background-color: white;
-        border: solid 2px;
-      }
-    }
   }
 
   /* cell number */
@@ -170,6 +249,9 @@
     margin-bottom: 40px;
     width:400px;
     height: 160px !important;
+    position: absolute;
+    top: 856px;
+    left: 49px;
 
       .previous {
         padding-left: 0px !important;
@@ -224,6 +306,58 @@
 
 
 
+// abonnements
+
+  .block_border{
+    border-left: solid 2px #333333;
+    border-right: solid 2px #333333;
+  }
+
+
+  .abonnements-items {
+    min-width: 160px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+
+
+    .productForm {
+      width: 66%;
+    }
+
+    .frequency {
+      width: 58%;
+    }
+
+    .btn_holder {
+      button {
+        width: 100% !important;
+        width: 100%;
+        color: black;
+        background-color: white;
+        border: solid 2px;
+      }
+    }
+  }
+
+// routine
+.routine-products {
+  justify-content: unset;
+}
+
+.routine-product {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+
+
+
 @media (max-width: 1180px) {
   .flex-center {
       flex-direction: column;
@@ -233,6 +367,28 @@
   .product_description {
       padding: 20px;
       width: 92vw;
+  }
+
+  .block_border {
+    border-top: solid 2px #333333;
+    border-bottom: solid 2px #333333;
+    border-right: none;
+    border-left: none;
+  }
+
+  .abonnements-items {
+    min-width: 160px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .image-blocks, .image-block {
+    width:100%;
+    max-width:100%;
   }
 }
 

@@ -18,11 +18,11 @@ Icons row
 
 
         {% if row-title != blank %}
-            <h1 class="icons-row__title">{{ row-title }}</h1>
+            <h1 class="icons-row__title icons-row-title">{{ row-title }}</h1>
         {% endif %}
         {% if subtitle != blank %}
           <div class="flex-center">
-            <h4 class="icons-row__title">{{ subtitle }}</h4>
+            <h2 class="icons-row__title icons-row-subtitle">{{ subtitle }}</h4>
           </div>
         {% endif %}
         {% if section.settings.show_long_text %}
@@ -45,7 +45,7 @@ Icons row
               <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
 
               {% if title != blank %}
-              <h3 class="icons-row__title">{{ title }}</h3>
+              <p class="icons-row__title">{{ title }}</p>
               {% endif %}
 
               {% if content != blank %}
@@ -66,7 +66,7 @@ Icons row
 
       {% if section.settings.show_button %}
         <div class="flex-center">
-            <button>{{ sub-cta }}</button>
+            <button style="color: {{ section.settings.text_color }}; background-color: {{ section.settings.btn_color }}">{{ sub-cta }}</button>
         </div>
       {% endif %}
 
@@ -134,6 +134,19 @@ Icons row
       "id": "sub-cta",
       "label": "subtext button",
       "default": "En savoir plus"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    }
+    ,
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button color",
+      "default": "#FFFFFF"
     }
   ],
   "blocks": [

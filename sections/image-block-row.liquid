@@ -1,5 +1,5 @@
 
-<div class="image-blocks" style="display: flex; flex-wrap: nowrap;">
+<div class="image-blocks flex-center">
   {% for block in section.blocks %}
     {%- assign image-url = block.settings.image-url -%}
     {% assign title = block.settings.title %}
@@ -13,10 +13,10 @@
 
 
 
-        <div class="image-block" style="background-image: url('{{image-url}}'); flex-grow: 1; height:100%; display: flex; flex-direction: column;">
-          <h1 style="color: {{ textColor }}">{{ title }}</h1>
-          <h2 style="color: {{ textColor }}">{{ sub-title }}</h2>
-          <a href="{{ link }}" class="button--primary button" style="color: {{ buttonPrimaryText }}; background-color: {{ buttonPrimaryBackground }}; border-color: {{ buttonPrimaryBorder }}">{{ cta }}</a>
+        <div class="image-block text-center" style="background-image: url('{{image-url}}'); flex-grow: 1; height:100%; display: flex; flex-direction: column;">
+          <p class="image-blocks-title" style="color: {{ textColor }}">{{ title }}</p>
+          <p class="image-blocks-subtitle" style="color: {{ textColor }}">{{ sub-title }}</p>
+          <a href="{{ link }}" class="button--primary button" style="margin-bottom:92px;color: {{ buttonPrimaryText }}; background-color: {{ buttonPrimaryBackground }}; border-color: {{ buttonPrimaryBorder }}">{{ cta }}</a>
 
         </div>
   {% endfor %}
