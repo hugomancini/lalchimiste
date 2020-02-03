@@ -82,9 +82,9 @@
     "form": {
       "qty": "QTY",
       "quantity": "Quantity",
-      "submit": "ACHETER",
+      "submit": "Ajouté!",
       "sold_out": "Sold Out",
-      "success": "Ajouté !",
+      "success": "Ajouté!",
       "submit_error": "OOPS!",
       "submit_error_details": "Désolé, il semble que nous n'ayons plus assez de stock sur ce produit. Essayer de diminuer la quantité de produits."
     },

@@ -4224,6 +4224,37 @@ jQuery( function ($) {
 		Gmap.init();
 
 		$(window).trigger('scroll');
+      
+      $('.js-subscription').on('click', function(e){
+          e.preventDefault();
+          var shipping_interval_frequency = $(this).attr('data-interval-frequency'),
+              shipping_interval_unit_type = $(this).attr('data-interval-type'),
+              subscription_id = $(this).attr('data-subscription'),
+              id = parseInt($(this).attr('data-id'));
+          addItemToCart(id , 1, shipping_interval_frequency, shipping_interval_unit_type, subscription_id)
+        });
+        function addItemToCart(variant_id, quantity, shipping_interval_frequency, shipping_interval_unit_type, subscription_id) {
+          data = {
+            "quantity": quantity,
+            "id": variant_id,
+            "properties[shipping_interval_frequency]": shipping_interval_frequency,
+            "properties[shipping_interval_unit_type]": shipping_interval_unit_type,
+            "properties[subscription_id]": subscription_id
+          }
+          jQuery.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            data: data,
+            dataType: 'json',
+            success: function(product) {
+              Cart.getCart(Cart.buildCart);
+
+              if ($(window).width() > 550){
+                Cart.popover.show(product);
+              }
+            }
+          });
+        }
 	});
 	
 	Sections.init();

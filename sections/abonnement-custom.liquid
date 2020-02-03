@@ -46,13 +46,13 @@
               {% assign main_product = all_products[section.settings.main_product] %}
 
 
-                <div class="carousel carousel-main" data-flickity='{ "pageDots": false  }' >
+                <div class="carousel carousel-main" data-flickity='{ "pageDots": false, "autoPlay": true  }' >
                   {% for image in main_product.images %}
                     <div class="carousel-cell" style="background: url({{ image | product_img_url: 'master'}})"></div>
                   {% endfor %}
                 </div>
 
-                <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "wrapAround": true, "pageDots": false }' >
+                <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", , "wrapAround": true, "pageDots": false }' >
                   {% for image in main_product.images %}
                   <div class="carousel-cell">
                     <div class="carousel-image" style="background: url({{ image | product_img_url: 'master'}})"></div>
@@ -73,54 +73,75 @@
 
               <div class="abonnement-part">
                 <div class="abo-step">
-                  <p class="abo-title">1. CHOISISSEZ VOTRE ABONNEMENT</p>
+                  <p class="abo-title">1. JE CHOISIS MA FORMULE</p>
                 </div>
 
-                <div class="item-blocks flex-center">
+                <div class="flex-center">
+
+                  <div class="item-blocks flex-center">
 
 
 
-                {% for block in section.blocks %}
-                {% assign product = all_products[block.settings.product] %}
-                {% assign section_images = ["value1"] %}
-                {%- assign image = block.settings.picto -%}
-                {%- assign title = block.settings.titleAbo -%}
-                {%- assign contenu = block.settings.contenu -%}
+                  {% for block in section.blocks %}
+                  {% assign product = all_products[block.settings.product] %}
+                  {% assign section_images = ["value1"] %}
+                  {%- assign image = block.settings.picto -%}
+                  {%- assign title = block.settings.titleAbo -%}
+                  {%- assign contenu = block.settings.contenu -%}
 
-                  <div class="abonnements-items flex-center-vertical text-center {% if block.settings.show_borders %} block_border {% endif %}">
+                    <div class="abonnements-items flex-center-vertical text-center {% if block.settings.show_borders %} block_border {% endif %}">
+                      <div class="abofreq">
+                        <div class="abo-product-title"> {{ title }} </div>
 
-                    <div class="abo-product-title"> {{ title }} </div>
+                        <div class="frequency"> {{ contenu }} </div>
+                      </div>
 
-                    <div class="frequency"> {{ contenu }} </div>
 
+                      <div class="product_img">
 
-                    <div class="product_img">
+                        <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
+                      </div>
 
-                      <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
+                        {% form 'product', product, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
+                          <div class="productForm-block no-show">
+                            <select id="product-bar-select" name="id">
+                            {% for variant in product.variants %}
+                              <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}" data-sku="{{variant.sku}}">
+                              {{ variant.title }} - {{ variant.price | money | strip_html }}
+                              </option>
+                            {% endfor %}
+                            </select>
+                          </div>
+
+                          <input type="hidden" class="inputCounter" name="quantity" value="1" />
+
+                          <div class="productForm-block flex-center-vertical" style="width: 100%;">
+                            {% for variant in product.variants %}
+                            <div class="btn_holder">
+                               <button class="js-subscription add_abo_btn" type="submit"
+                                name="checkout"
+                                data-handle="{{product.handle}}"
+                                data-id="{{ product.variants.first.id }}"
+                                data-interval-frequency="{{product.metafields.subscriptions.shipping_interval_frequency}}"
+                                data-interval-type="{{product.metafields.subscriptions.shipping_interval_unit_type}}"
+                                data-subscription="{{product.metafields.subscriptions.subscription_id}}">{{ variant.price | money | strip_html }}</button>
+                            </div>
+                            {% endfor %}
+                            <div class="frequency-bis">
+                              <p>Tous les 2 mois</p>
+                            </div>
+                          </div>
+                        {% endform %}
+
                     </div>
 
-                      {% form 'product', product, class:'productForm product-bar__form', data-color_swatches: color_swatches %}
-
-                        <input type="hidden" class="inputCounter" name="quantity" value="1" />
-
-                        <div class="productForm-block flex-center" style="width: 100%;">
-                          {% for variant in product.variants %}
-                          <div class="btn_holder">
-                             <button class=" js-productForm-submit" type="submit" name="checkout" data-handle="{{product.handle}}">{{ variant.price | money | strip_html }}</button>
-                          </div>
-                          {% endfor %}
-                        </div>
-                      {% endform %}
-                      <div class="frequency-bis">
-                        <p>Tous les 2 mois</p>
-                      </div>
+                    {% endfor %}
                   </div>
-                  {% endfor %}
-              </div>
+                </div>
 
               <div class="routine-products-part">
                 <div class="abo-step">
-                  <p class="abo-title">2. CHOISISSEZ VOTRE ROUTINE LESSIVE</p>
+                  <p class="abo-title">2. JE COMPLÈTE MA ROUTINE LESSIVE</p>
                 </div>
 
                 <div class="routine-products flex-center">
@@ -202,43 +223,51 @@
         </div>
 
 <script>
-  $('.carousel').flickity({
-    // options
-    cellAlign: 'left',
-    contain: true
-  });
+//   $('.carousel').flickity({
+//     // options
+//     cellAlign: 'left',
+//     contain: true
+//   });
 
 </script>
 
 <script>
-  $('.js-subscription').click(function(evt){
-    evt.preventDefault();
-    var shipping_interval_frequency = $(this).attr('data-interval-frequency'),
-        shipping_interval_unit_type = $(this).attr('data-interval-type'),
-        subscription_id = $(this).attr('data-subscription'),
-        id = parseInt($(this).attr('data-id'));
-    addItemToCart(id , 1, shipping_interval_frequency, shipping_interval_unit_type, subscription_id)
+  $('.add_abo_btn').click(function() {
+    $(this).addClass("abo_selected")
+    console.log(this)
   })
 </script>
+
 <script>
-  function addItemToCart (variant_id, quantity, shipping_interval_frequency, shipping_interval_unit_type, subscription_id) {
-    data = {
-      "quantity": quantity,
-      "id": variant_id,
-      "properties[shipping_interval_frequency]": shipping_interval_frequency,
-      "properties[shipping_interval_unit_type]": shipping_interval_unit_type,
-      "properties[subscription_id]": subscription_id
-    }
-    jQuery.ajax({
-      type: 'POST',
-      url: '/cart/add.js',
-      data: data,
-      dataType: 'json',
-      success: function() {
-        window.location.href = '/cart';
-      }
-    });
-  }
+//   $('.js-subscription').click(function(evt){
+//     console.log("click")
+//     evt.preventDefault();
+//     var shipping_interval_frequency = $(this).attr('data-interval-frequency'),
+//         shipping_interval_unit_type = $(this).attr('data-interval-type'),
+//         subscription_id = $(this).attr('data-subscription'),
+//         id = parseInt($(this).attr('data-id'));
+//     addItemToCart(id , 1, shipping_interval_frequency, shipping_interval_unit_type, subscription_id)
+//   })
+//   function addItemToCart (variant_id, quantity, shipping_interval_frequency, shipping_interval_unit_type, subscription_id) {
+//     data = {
+//       "quantity": quantity,
+//       "id": variant_id,
+//       "properties[shipping_interval_frequency]": shipping_interval_frequency,
+//       "properties[shipping_interval_unit_type]": shipping_interval_unit_type,
+//       "properties[subscription_id]": subscription_id
+//     }
+//     jQuery.ajax({
+//       type: 'POST',
+//       url: '/cart/add.js',
+//       data: data,
+//       dataType: 'json',
+//       success: function() {
+//         console.log(data)
+//         console.log("success")
+//         // window.location.href = '/cart';
+//       }
+//     });
+//   }
 </script>
 
 {% schema %}

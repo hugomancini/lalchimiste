@@ -127,7 +127,7 @@
           "meganav_image_link": "",
           "show_announcement": true,
           "show_announcement_on_mobile": true,
-          "text": "<p><em>Livraison offerte sur les abonnements &amp; &agrave; partir de 50&euro; d'achat sur le shop<\/em><\/p>\n<p><\/p>",
+          "text": "<p><em>Livraison offerte sur les abonnements &amp; &agrave; partir de 50&euro; d'achat<\/em><\/p>\n<p><\/p>",
           "link": ""
         }
       },
@@ -163,19 +163,19 @@
           "1498737500673-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/l_alchimiste_lessive_ecologique.jpg",
-              "image_mobile": "shopify:\/\/shop_images\/l_alchimiste_lessive_ecologique-2.jpg",
+              "image": "shopify:\/\/shop_images\/lessive_maison_L_alchimiste.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/lessive_maison_L_alchimiste.jpg",
               "image_position": "center-center",
               "alignment": "center",
               "content_width": "full-width",
               "color_style": "white",
               "subheading": "",
               "title": "Le soin du linge qui va réveiller votre routine lessive",
-              "text": "<p>.<\/p>\n<p>LESSIVES &Eacute;COLOGIQUES AU SAVON DE MARSEILLE<\/p>\n<p>&amp;&nbsp;ACCESSOIRES DE LAVAGE Z&Eacute;RO D&Eacute;CHET<\/p>\n<p>.<\/p>\n<p><strong>PASSER &Agrave;&nbsp;UNE ROUTINE LINGE RESPONSABLE<\/strong><\/p>",
+              "text": "<p><br><\/p>\n<p>LESSIVES ÉCOLOGIQUES AU SAVON DE MARSEILLE<\/p>\n<p>& ACCESSOIRES DE LAVAGE ZÉRO DÉCHET<\/p>\n<p><br><\/p>\n<p><strong>PASSER À UNE ROUTINE LINGE RESPONSABLE<\/strong><\/p>",
               "cta": "JE DÉCOUVRE",
               "link": "shopify:\/\/collections\/les-produits",
               "cta_2": "JE M'ABONNE",
-              "link_2": "shopify:\/\/pages\/abonnement",
+              "link_2": "shopify:\/\/pages\/abonnement-lessive",
               "heading_size": "normal",
               "text_size": "small",
               "overlay_color": "#333333",
@@ -268,7 +268,7 @@
       "newsletter": {
         "type": "newsletter",
         "settings": {
-          "show_newsletter": false,
+          "show_newsletter": true,
           "color": "#222222",
           "background": "#ffffff",
           "title": "Inscrivez-vous à la newsletter",
@@ -318,10 +318,12 @@
           "heading_size": "small",
           "title": "",
           "content": "",
-          "cta": "",
-          "link": "",
-          "accent_line": "curved",
-          "accent_line_color": "#333333"
+          "cta": "JE PREFERE LA LESSIVE  EN POUDRE >>",
+          "link": "shopify:\/\/pages\/abonnement-lessive-poudre",
+          "accent_line": "none",
+          "bg_color": "#a7ae9e",
+          "text_color": "#ffffff",
+          "accent_line_color": "#ffffff"
         }
       },
       "icons-row": {
@@ -360,43 +362,6 @@
         "settings": {
           "color_icons_bg": "#fafafa",
           "color_icons_text": "#333333"
-        }
-      },
-      "1532038978596": {
-        "type": "collection-list",
-        "blocks": {
-          "1532038978596-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-produits",
-              "image": "shopify:\/\/shop_images\/lessive_savon_de_marseille_b8ba2964-ee00-494e-abd2-33b11acb46d5.jpg",
-              "vertical_description": "",
-              "button_text": "JE DÉCOUVRE"
-            }
-          },
-          "1532038978596-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-abonnements",
-              "image": "shopify:\/\/shop_images\/lessive_poudre_ecologique.jpg",
-              "vertical_description": "",
-              "button_text": "JE M'ABONNE"
-            }
-          }
-        },
-        "block_order": [
-          "1532038978596-0",
-          "1532038978596-1"
-        ],
-        "settings": {
-          "title": "<br> Changer vos habitudes en douceur",
-          "subtitle": "",
-          "coll_text_position": "center",
-          "show_description": false,
-          "blocks_height": "default-height",
-          "text_color": "#ffffff",
-          "overlay_color": "#222222",
-          "overlay_opacity": 30
         }
       },
       "1532039050804": {
@@ -451,7 +416,7 @@
           "link": "https:\/\/www.instagram.com\/lalchimiste.paris\/",
           "color_text": "#333333",
           "color_overlay": "#a7ae9e",
-          "overlay_opacity": 72
+          "overlay_opacity": 65
         }
       },
       "list-collections-page-template": {
@@ -487,56 +452,27 @@
           "1532039480983": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/bg-image-abo.png",
               "image_mobile": "",
               "image_position": "center-center",
               "alignment": "center",
-              "content_width": "one-half",
+              "content_width": "full-width",
               "color_style": "white",
               "subheading": "",
-              "title": "Welcome to Modular",
-              "text": "<p>A unique layout with a striking design<\/p>",
-              "cta": "Shop Now",
-              "link": "shopify:\/\/collections\/all",
-              "cta_2": "",
-              "link_2": "",
+              "title": "Lessive écologique au savon de Marseille",
+              "text": "<br><p>L’EFFICACITÉ SANS COMPROMIS AVEC 3 INGRÉDIENTS<br>\n100% D'ORIGINE NATURELLE I BIODÉGRADABLE I VEGAN<\/p><br>\n<p>LIVRÉE CHEZ VOUS TOUS LES DEUX MOIS <br>A PARTIR DE 4€ \/ MOIS<\/p><br>\n<br>\n<strong>CHOISISSEZ VOTRE TYPE DE LESSIVE<\/strong>",
+              "cta": "LESSIVE LIQUIDE",
+              "link": "shopify:\/\/pages\/abonnement-lessive-liquide",
+              "cta_2": "LESSIVE EN POUDRE",
+              "link_2": "shopify:\/\/pages\/abonnement-lessive-poudre",
               "heading_size": "large",
               "text_size": "normal",
               "overlay_color": "#333333",
               "overlay_opacity": 30,
               "button_size": "normal",
               "cta_color": "#ffffff",
-              "cta_bg": "#333333",
-              "cta_border": "#333333",
-              "cta_2_color": "#333333",
-              "cta_2_bg": "#ffffff",
-              "cta_2_border": "#ffffff"
-            }
-          },
-          "1532039484050": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "image_mobile": "",
-              "image_position": "center-center",
-              "alignment": "center",
-              "content_width": "one-half",
-              "color_style": "white",
-              "subheading": "",
-              "title": "Welcome to Modular",
-              "text": "<p>A unique layout with a striking design<\/p>",
-              "cta": "Shop Now",
-              "link": "shopify:\/\/collections\/all",
-              "cta_2": "",
-              "link_2": "",
-              "heading_size": "large",
-              "text_size": "normal",
-              "overlay_color": "#333333",
-              "overlay_opacity": 30,
-              "button_size": "normal",
-              "cta_color": "#ffffff",
-              "cta_bg": "#333333",
-              "cta_border": "#333333",
+              "cta_bg": "#b0b7a8",
+              "cta_border": "#b0b7a8",
               "cta_2_color": "#333333",
               "cta_2_bg": "#ffffff",
               "cta_2_border": "#ffffff"
@@ -544,12 +480,11 @@
           }
         },
         "block_order": [
-          "1532039480983",
-          "1532039484050"
+          "1532039480983"
         ],
         "settings": {
-          "showNavDots": true,
-          "showNavArrows": true,
+          "showNavDots": false,
+          "showNavArrows": false,
           "autoplay": false,
           "parallax": false,
           "transition": "slide",
@@ -588,7 +523,7 @@
             "settings": {
               "titleColone": "LESSIVE LIQUIDE",
               "contenu": "<p><strong>2 &agrave; 3 lessives \/semaine<\/strong><\/p>\n<p><strong>24 lavages<\/strong><\/p>\n<p><strong>Tous les 2 mois<\/strong><\/p>",
-              "product": "copie-de-abonnement-lessive-liquide-2-recharges",
+              "product": "",
               "background_color": "#a4b39f",
               "typo_color": "#ffffff"
             }
@@ -598,7 +533,7 @@
             "settings": {
               "titleColone": "LESSIVE LIQUIDE",
               "contenu": "<p><strong>5 &agrave; 6&nbsp;lessives \/semaine<\/strong><\/p>\n<p><strong>48&nbsp;lavages&nbsp;<\/strong><\/p>\n<p><strong>Tous les 2 mois<\/strong><\/p>",
-              "product": "copie-de-abonnement-lessive-liquide-4-recharges",
+              "product": "",
               "background_color": "#ffffff",
               "typo_color": "#000000"
             }
@@ -608,7 +543,7 @@
             "settings": {
               "titleColone": "LESSIVE POUDRE",
               "contenu": "<p><strong>2 &agrave; 3 lessives \/semaine<\/strong><\/p>\n<p><strong>50 lavages<\/strong><\/p>\n<p><strong>Tous les 4 mois<\/strong><\/p>",
-              "product": "abo-solo-lessive-poudre",
+              "product": "",
               "background_color": "#c5c4c0",
               "typo_color": "#ffffff"
             }
@@ -618,7 +553,7 @@
             "settings": {
               "titleColone": "LESSIVE POUDRE",
               "contenu": "<p><strong>5 &agrave; 6 lessives \/semaine<\/strong><\/p>\n<p><strong>50 lavages<\/strong><\/p>\n<p><strong>Tous les 2 mois<\/strong><\/p>",
-              "product": "abo-family-lessive-poudre",
+              "product": "abonnement-lessive-poudre-family",
               "background_color": "#e5e3c6",
               "typo_color": "#000000"
             }
@@ -641,7 +576,7 @@
           "1573031269284-0": {
             "type": "gallery_image",
             "settings": {
-              "slide": "shopify:\/\/shop_images\/balles_de_sechage_carre.jpg"
+              "slide": "shopify:\/\/shop_images\/lessive_en_poudre_maison_L_alchimiste.jpg"
             }
           }
         },
@@ -663,38 +598,7 @@
           "title": "Moins de chimie, plus d'alchimie",
           "content": "<p>Une&nbsp;gamme de produits minimaliste et des ingr&eacute;dients &agrave; 100% d&rsquo;origine naturelle.&nbsp;Nous pensons&nbsp;que la nature nous offre tout ce dont nous avons besoin&nbsp;!&nbsp;Une retour aux sources, &agrave; l&rsquo;essentiel et &agrave; plus de transparence.<\/p>",
           "cta": "EN SAVOIR PLUS",
-          "link": "shopify:\/\/pages\/concept"
-        }
-      },
-      "1573031660176": {
-        "type": "image-with-text",
-        "blocks": {
-          "1573031660176-0": {
-            "type": "gallery_image",
-            "settings": {
-              "slide": "shopify:\/\/shop_images\/IMG_8164-2.jpg"
-            }
-          }
-        },
-        "block_order": [
-          "1573031660176-0"
-        ],
-        "settings": {
-          "showNavDots": false,
-          "showNavArrows": false,
-          "transition": "slide",
-          "autoplay": false,
-          "duration": 4,
-          "color_style": "black",
-          "show_margins": false,
-          "slide_height": "four-fifty-height-hero",
-          "slide_image_position": "right",
-          "slide_image_width": "med_s12|med_s12",
-          "subheading": "",
-          "title": "Notre histoire",
-          "content": "<p>Une entreprise fran&ccedil;aise et engag&eacute;e !&nbsp;<\/p>",
-          "cta": "EN SAVOIR PLUS",
-          "link": "shopify:\/\/pages\/ingredients"
+          "link": "shopify:\/\/pages\/histoire"
         }
       },
       "icons-row-bis": {
@@ -703,27 +607,30 @@
           "1575404911982": {
             "type": "text",
             "settings": {
-              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "icon-new": "shopify:\/\/shop_images\/simplicite_faa8bc42-1818-4f52-b2c1-bd2d0dcf16d8.png",
               "title": "SIMPLICITÉ",
-              "content": "Livré chez vous gratuitement",
+              "title_strong": true,
+              "content": "Livré chez vous <br>\ngratuitement",
               "show_borders": false
             }
           },
           "1575405071900": {
             "type": "text",
             "settings": {
-              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "icon-new": "shopify:\/\/shop_images\/flexibilite_94cf95fa-75a9-4781-80fd-7b2b0e5737e5.png",
               "title": "FLEXIBILITÉ",
-              "content": "Résiliez ou mettez en pause quand vous voulez en 1 clic",
+              "title_strong": false,
+              "content": "Résiliez ou mettez en pause <br> quand vous voulez en 1 clic !",
               "show_borders": false
             }
           },
           "1575405127359": {
             "type": "text",
             "settings": {
-              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "icon-new": "shopify:\/\/shop_images\/personnalise_2bb0eb84-3cf2-47d7-9d3f-27f6eac2188d.png",
               "title": "PERSONNALISÉ",
-              "content": "Des formules adaptées à vos besoins",
+              "title_strong": false,
+              "content": "Des formules adaptées <br> à vos besoins",
               "show_borders": false
             }
           }
@@ -737,12 +644,22 @@
           "color_icons_bg": "#fafafa",
           "color_icons_text": "#333",
           "row-title": "Abonnez-vous",
-          "subtitle": "Sous-titrez ici",
-          "show_long_text": false,
-          "text-over-icons": "Modular is a powerful Shopify theme that will set you apart from the rest with Mosaic, Gallery, and Slideshow sections.",
+          "title_font_size": 34,
+          "subtitle": "",
+          "subtitle_font_size": 17,
+          "show_long_text": true,
+          "text-over-icons": "VOUS NE SEREZ PLUS JAMAIS À COURT DE LESSIVE !",
+          "text_over_icons_font_size": 15,
           "subtext": "",
+          "icon_height": 74,
           "show_button": false,
-          "sub-cta": "En savoir plus"
+          "sub-cta": "",
+          "link": "",
+          "cta_color": "#ffffff",
+          "cta_bg": "#333333",
+          "cta_border": "transparent",
+          "block_title_font_size": 14,
+          "content_font_size": 14
         }
       },
       "icons-row-third": {
@@ -751,27 +668,30 @@
           "1575407983381": {
             "type": "text",
             "settings": {
-              "icon-new": "shopify:\/\/shop_images\/verrecontenant.png",
+              "icon-new": "shopify:\/\/shop_images\/hypoallergenique-white-big.png",
               "title": "NATUREL",
-              "content": "Une formule ultra clean, hypoallergénique et sans parfum",
+              "title_strong": false,
+              "content": "Une formule ultra clean, hypoallergénique <br>et sans parfum",
               "show_borders": false
             }
           },
           "1575408052577": {
             "type": "text",
             "settings": {
-              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "icon-new": "shopify:\/\/shop_images\/reutilisable-white-big.png",
               "title": "ZÉRO DECHET",
-              "content": "Contenants en verre réutilisables à l'infini",
+              "title_strong": false,
+              "content": "Contenants en verre <br>réutilisables à <br>l'infini",
               "show_borders": false
             }
           },
           "1575408090603": {
             "type": "text",
             "settings": {
-              "icon-new": "shopify:\/\/shop_images\/artisanal.png",
+              "icon-new": "shopify:\/\/shop_images\/artisanal-white-big.png",
               "title": "MADE IN FRANCE",
-              "content": "Fabrication artisanale au cœur de la Provence",
+              "title_strong": false,
+              "content": "Fabrication artisanale <br>au cœur de la <br>Provence",
               "show_borders": false
             }
           }
@@ -785,12 +705,22 @@
           "color_icons_bg": "#a4b4a0",
           "color_icons_text": "#ffffff",
           "row-title": "Le soin du linge responsable",
+          "title_font_size": 34,
           "subtitle": "",
+          "subtitle_font_size": 12,
           "show_long_text": true,
-          "text-over-icons": "Modular is a powerful Shopify theme that will set you apart from the rest with Mosaic, Gallery, and Slideshow sections.",
-          "subtext": "Subtext",
+          "text-over-icons": "AUJOURD'HUI AUCUNE LOI N'IMPOSE AUX FABRICANTS <br>DE LESSIVES À INDIQUER LA COMPOSITION DE LEURS PRODUITS. <br>UN RETOUR À PLUS DE TRANSPARENCE NOUS PARAISSAIT ESSENTIEL <br> ALORS NOUSAVONS FAIT LE CHOIX DE NE RIEN VOUS CACHER !",
+          "text_over_icons_font_size": 16,
+          "subtext": "",
+          "icon_height": 74,
           "show_button": true,
-          "sub-cta": "En savoir plus"
+          "sub-cta": "EN SAVOIR PLUS",
+          "link": "shopify:\/\/pages\/ingredients-naturels",
+          "cta_color": "#000000",
+          "cta_bg": "#ffffff",
+          "cta_border": "transparent",
+          "block_title_font_size": 14,
+          "content_font_size": 14
         }
       },
       "image-block-row": {
@@ -799,40 +729,40 @@
           "1575409511511": {
             "type": "text",
             "settings": {
-              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Kit_decouverte_2.jpg?v=1573032467",
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/kit_lessive_l_alchimiste.png?v=1575999127",
               "text_color": "#ffffff",
-              "title": "Feature",
-              "sub-title": "Feature",
-              "cta": "Je m'abonne",
-              "link": "",
+              "title": "LESSIVE LIQUIDE",
+              "sub-title": "À PARTIR DE<br>5€ PAR MOIS",
+              "cta": "JE M'ABONNE",
+              "link": "shopify:\/\/pages\/abonnement-lessive-liquide",
               "cta_color": "#ffffff",
-              "cta_bg": "#333333",
-              "cta_border": "#333333"
+              "cta_bg": "#b0b7a8",
+              "cta_border": "#b0b7a8"
             }
           },
           "1575409521123": {
             "type": "text",
             "settings": {
-              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Recharge_lessive_poudre.jpg?v=1573031876",
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Lessive_poudre.png?v=1575999137",
               "text_color": "#ffffff",
-              "title": "Feature",
-              "sub-title": "Feature",
-              "cta": "Je m'abonne",
-              "link": "",
-              "cta_color": "#ffffff",
-              "cta_bg": "#333333",
-              "cta_border": "#333333"
+              "title": "LESSIVE EN POUDRE",
+              "sub-title": "À PARTIR DE<br>4€ PAR MOIS",
+              "cta": "JE M'ABONNE",
+              "link": "shopify:\/\/pages\/abonnement-lessive-poudre",
+              "cta_color": "#000000",
+              "cta_bg": "#ffffff",
+              "cta_border": "#ffffff"
             }
           },
           "1575409530546": {
             "type": "text",
             "settings": {
-              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Le_savon.jpg?v=1559288888",
-              "text_color": "#ab4848",
-              "title": "Feature",
-              "sub-title": "Feature",
-              "cta": "Je m'abonne",
-              "link": "",
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/Gamme_2.png?v=1575999113",
+              "text_color": "#ffffff",
+              "title": "UNE GAMME COMPLÈTE",
+              "sub-title": "RETROUVEZ TOUS NOS PRODUITS<br>SUR LE SHOP",
+              "cta": "JE DÉCOUVRE",
+              "link": "shopify:\/\/collections\/les-produits",
               "cta_color": "#ffffff",
               "cta_bg": "#333333",
               "cta_border": "#333333"
@@ -844,7 +774,9 @@
           "1575409521123",
           "1575409530546"
         ],
-        "settings": {}
+        "settings": {
+          "block_title_font_size": 23
+        }
       },
       "testimonials": {
         "type": "testimonials",
@@ -892,40 +824,37 @@
           "1575493358135": {
             "type": "text",
             "settings": {
-              "titleColone": "AZAZ",
-              "contenu": "<p>AZAZAZ<\/p>",
-              "product": "copie-de-abonnement-lessive-liquide-8-recharges",
-              "wash_count": "",
-              "picto": "shopify:\/\/shop_images\/24lavages.png",
-              "frequency": "",
+              "titleAbo": "SOLO",
+              "contenu": "<p>2 &agrave; 3 machines \/ semaine<\/p>",
+              "product": "abonnement-lessive-liquide-solo",
+              "picto": "shopify:\/\/shop_images\/24lavages_f9f9a042-209c-4b5a-9a9d-1956dc0fcedf.png",
               "background_color": "",
-              "typo_color": ""
+              "typo_color": "",
+              "show_borders": false
             }
           },
           "1575493384628": {
             "type": "text",
             "settings": {
-              "titleColone": "ASASAS",
-              "contenu": "<p>ZDDZDZD<\/p>",
-              "product": "copie-de-abonnement-lessive-liquide-2-recharges",
-              "wash_count": "",
-              "picto": "shopify:\/\/shop_images\/48lavages.png",
-              "frequency": "",
+              "titleAbo": "FAMILY",
+              "contenu": "<p>5 &agrave; 6 machines \/ semaine<\/p>",
+              "product": "abonnement-lessive-liquide-family",
+              "picto": "shopify:\/\/shop_images\/48lavages_57665cfd-d5b9-4133-b4d6-0ec07f0a6724.png",
               "background_color": "",
-              "typo_color": ""
+              "typo_color": "",
+              "show_borders": true
             }
           },
           "1575493400721": {
             "type": "text",
             "settings": {
-              "titleColone": "ASASAS",
-              "contenu": "<p>ASASAS<\/p>",
-              "product": "abo-family-lessive-poudre",
-              "wash_count": "2 à 3 lavages par semaine",
-              "picto": "shopify:\/\/shop_images\/96lavages.png",
-              "frequency": "",
+              "titleAbo": "BIG FAMILY",
+              "contenu": "<p>1 &agrave; 2 machines \/ jour<\/p>",
+              "product": "abonnement-lessive-liquide-big-family",
+              "picto": "shopify:\/\/shop_images\/96lavages_3a40e767-a37e-4421-8d18-fa36c958f19e.png",
               "background_color": "",
-              "typo_color": ""
+              "typo_color": "",
+              "show_borders": false
             }
           }
         },
@@ -936,38 +865,222 @@
         ],
         "settings": {
           "show_page_title": false,
-          "main_product": "test",
-          "product_title": "Lessive en poudre",
-          "product_description": "<p>Dans mon premier kit je re&ccedil;ois :<br>une bouteille en verre réutilisable à l&rsquo;infini !<\/p>"
+          "main_product": "abonnement-lessive-liquide-solo",
+          "product_title": "Lessive liquide",
+          "value_proposition": "<p>AU SAVON DE MARSEILLE A L'HUILE D'OLIVE<br>SANS PARFUM<\/p>",
+          "product_description": "<p><br>Dans mon premier kit je reçois : <br> une bouteille en verre réutilisable à l’infini !<br>  Puis tous les 2 mois, des éco-recharges.<br><\/p>",
+          "product_routine_a": "doseur-lessive-liquide",
+          "image_routine_a": "shopify:\/\/shop_images\/Picto_doseur_lessive.png",
+          "product_routine_b": "savon-detachant",
+          "image_routine_b": "shopify:\/\/shop_images\/Picto_savon_detachant.png",
+          "go_cart_btn": "JE VALIDE MON ABONNEMENT",
+          "go_cart_btn_color": "#fafafa",
+          "go_cart_btn_bg_color": "#333333"
         }
       },
       "abonnement-cusbis": {
         "type": "abonnement-cusbis",
         "settings": {
-          "product_layout": "slideshow",
-          "image_gallery": "zoom",
-          "image_size": "large",
-          "add_cart_position": "top",
-          "color_swatches": true,
-          "show_vendor": true,
-          "show_quantity": true,
-          "show_cart_bar": true,
-          "show_newsletter": true,
-          "text_newsletter": "<p>Notify me when this product is available:<\/p>",
-          "enable_payment_button": true,
-          "page_tab_1": "",
-          "page_tab_2": "",
-          "page_tab_3": "",
-          "product_slideshow_dots": false,
-          "product_slideshow_arrows": false
+          "show_page_title": false,
+          "main_product": "",
+          "product_title": "",
+          "value_proposition": "AU SAVON DE MARSEILLE A L'HUILE D'OLIVE SANS PARFUM",
+          "product_description": "Description",
+          "product_routine_a": "",
+          "image_routine_a": "",
+          "product_routine_b": "",
+          "image_routine_b": "",
+          "go_cart_btn": "",
+          "go_cart_btn_color": "#fafafa",
+          "go_cart_btn_bg_color": "#333"
+        }
+      },
+      "1576221235676": {
+        "type": "icons-row-third",
+        "blocks": {
+          "1576221235676-0": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/hypoallergenique-white-big.png",
+              "title": "NATUREL",
+              "title_strong": false,
+              "content": "Une formule ultra clean, hypoallergénique <br>et sans parfum",
+              "show_borders": false
+            }
+          },
+          "1576221235676-1": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/reutilisable-white-big.png",
+              "title": "ZÉRO DÉCHET",
+              "title_strong": false,
+              "content": "Contenants en verre <br>réutilisables à <br>l'infini",
+              "show_borders": false
+            }
+          },
+          "1576221235676-2": {
+            "type": "text",
+            "settings": {
+              "icon-new": "shopify:\/\/shop_images\/artisanal-white-big.png",
+              "title": "MADE IN FRANCE",
+              "title_strong": false,
+              "content": "Fabrication artisanale <br>au cœur de la <br>Provence",
+              "show_borders": false
+            }
+          }
+        },
+        "block_order": [
+          "1576221235676-0",
+          "1576221235676-1",
+          "1576221235676-2"
+        ],
+        "settings": {
+          "color_icons_bg": "#a4b4a0",
+          "color_icons_text": "#ffffff",
+          "row-title": "Le soin du linge responsable",
+          "title_font_size": 34,
+          "subtitle": "",
+          "subtitle_font_size": 12,
+          "show_long_text": true,
+          "text-over-icons": "AUJOURD'HUI AUCUNE LOI N'IMPOSE AUX FABRICANTS <br>DE LESSIVES À INDIQUER LA COMPOSITION DE LEURS PRODUITS. <br>UN RETOUR À PLUS DE TRANSPARENCE NOUS PARAISSAIT ESSENTIEL <br> ALORS NOUSAVONS FAIT LE CHOIX DE NE RIEN VOUS CACHER !",
+          "text_over_icons_font_size": 16,
+          "subtext": "",
+          "icon_height": 74,
+          "show_button": true,
+          "sub-cta": "EN SAVOIR PLUS",
+          "link": "shopify:\/\/pages\/ingredients-naturels",
+          "cta_color": "#000000",
+          "cta_bg": "#ffffff",
+          "cta_border": "transparent",
+          "block_title_font_size": 14,
+          "content_font_size": 14
+        }
+      },
+      "1576238024737": {
+        "type": "image-block-row",
+        "blocks": {
+          "1576238024737-0": {
+            "type": "text",
+            "settings": {
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/lessive_naturelle_L_alchimiste.jpg?v=1578910457",
+              "text_color": "#ffffff",
+              "title": "Les produits",
+              "sub-title": "",
+              "cta": "JE DÉCOUVRE",
+              "link": "shopify:\/\/collections\/les-produits",
+              "cta_color": "#ffffff",
+              "cta_bg": "#333333",
+              "cta_border": "transparent"
+            }
+          },
+          "1576238024737-1": {
+            "type": "text",
+            "settings": {
+              "image-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0067\/0302\/2144\/files\/lessive_ecologique_L_alchimiste.jpg?v=1578910401",
+              "text_color": "#ffffff",
+              "title": "Les abonnements",
+              "sub-title": "",
+              "cta": "JE M'ABONNE",
+              "link": "shopify:\/\/pages\/abonnement-lessive",
+              "cta_color": "#ffffff",
+              "cta_bg": "#333333",
+              "cta_border": "transparent"
+            }
+          }
+        },
+        "block_order": [
+          "1576238024737-0",
+          "1576238024737-1"
+        ],
+        "settings": {
+          "block_title_font_size": 20
+        }
+      },
+      "abonnement-custom2": {
+        "type": "abonnement-custom2",
+        "blocks": {
+          "1576499127628": {
+            "type": "text",
+            "settings": {
+              "titleAbo": "SOLO",
+              "contenu": "<p>2 &agrave; 3 machines \/ semaine<\/p>",
+              "product": "abonnement-lessive-poudre-solo",
+              "picto": "shopify:\/\/shop_images\/Group_9_07ad03fb-f5f0-46a2-9f44-ab05ff800282.png",
+              "mois": "4",
+              "background_color": "",
+              "typo_color": "",
+              "show_borders": false
+            }
+          },
+          "1576499173359": {
+            "type": "text",
+            "settings": {
+              "titleAbo": "FAMILY",
+              "contenu": "<p>5 &agrave; 6 machines \/ semaine<\/p>",
+              "product": "abonnement-lessive-poudre-family",
+              "picto": "shopify:\/\/shop_images\/Group_9.png",
+              "mois": "2",
+              "background_color": "",
+              "typo_color": "",
+              "show_borders": true
+            }
+          },
+          "1576499224127": {
+            "type": "text",
+            "settings": {
+              "titleAbo": "BIG FAMILY",
+              "contenu": "<p>1 &agrave; 2 machines \/ jour<\/p>",
+              "product": "abonnement-lessive-poudre-big-family",
+              "picto": "shopify:\/\/shop_images\/Group_9_Copy_3.png",
+              "mois": "2",
+              "background_color": "",
+              "typo_color": "",
+              "show_borders": false
+            }
+          }
+        },
+        "block_order": [
+          "1576499127628",
+          "1576499173359",
+          "1576499224127"
+        ],
+        "settings": {
+          "show_page_title": false,
+          "main_product": "abonnement-lessive-poudre-solo",
+          "product_title": "Lessive en poudre",
+          "value_proposition": "<p>AU SAVON DE MARSEILLE A L'HUILE D'OLIVE<br>SANS PARFUM<\/p>",
+          "product_description": "<p><br>Dans mon premier kit je reçois : <br> un pot en verre réutilisable à l’infini !<br>Puis tous les 2 mois, des éco-recharges.<br><\/p>",
+          "product_routine_a": "doseur-poudre",
+          "image_routine_a": "shopify:\/\/shop_images\/Picto_doseur_lessive.png",
+          "product_routine_b": "savon-detachant",
+          "image_routine_b": "shopify:\/\/shop_images\/Picto_savon_detachant.png",
+          "go_cart_btn": "JE VALIDE MON ABONNEMENT",
+          "go_cart_btn_color": "#fafafa",
+          "go_cart_btn_bg_color": "#333333"
+        }
+      },
+      "rich-text2": {
+        "type": "rich-text2",
+        "settings": {
+          "layout": "default",
+          "heading_align": "left",
+          "heading_size": "small",
+          "title": "",
+          "content": "",
+          "cta": "JE PRÉFÈRE LA LESSIVE LIQUIDE >>",
+          "link": "shopify:\/\/pages\/abonnement-lessive-liquide",
+          "accent_line": "none",
+          "bg_color": "#a4b39f",
+          "text_color": "#ffffff",
+          "accent_line_color": "#333"
         }
       }
     },
     "content_for_index": [
       "1498737500673",
-      "1532038978596",
+      "1576221235676",
+      "1576238024737",
       "1573031269284",
-      "1573031660176",
       "1532039050804",
       "1532039151588"
     ]

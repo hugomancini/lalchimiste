@@ -60,9 +60,31 @@
 				var checkout_button_selectors = '[href="/checkout"], form[action="/cart"] button[type="submit"], form[action="/cart"] input[type="submit"], form[action="/checkout"] input[type="submit"], form[action="/checkout"] button[type="submit"]';
 				$(document).on('click', checkout_button_selectors, function(e) {
 					if (!e.target.hasAttribute('data-disable-recharge')) {
+            console.log("inside custom code")
 						e.preventDefault();
-						reChargeSaveCartNoteAndRedirectToCart();
-						window.location.href = '/cart';
+						var paramCart = '&cart_token=' + (document.cookie.match('(^|; )cart=([^;]*)')||0)[2];
+            $.ajax({
+              type: 'GET',
+              url: '/cart.js',
+              dataType: 'text',
+              success: function(data) {
+                console.log(data)
+                console.log(data.indexOf("subscription_id"))
+                if (data.indexOf("subscription_id") > -1) {
+                  var paramDomain = 'myshopify_domain={{ shop.permanent_domain }}';
+                  try {
+                    var paramLinker = "&" + ga.getAll()[0].get('linkerParam');
+                  } catch (err) {
+                    var paramLinker = '';
+                  }
+                  var paramCustomer = '{% if customer %}&customer_id={{ customer.id }}&customer_email={{ customer.email }}{% endif %}';
+                  window.location = "https://checkout.rechargeapps.com/r/checkout?" + paramDomain +  paramCart + paramLinker + paramCustomer;
+                } else {
+                  window.location = '/checkout';
+                }
+              }
+            });
+
 					} else {
 						console.info('ReCharge disabled');
 					}

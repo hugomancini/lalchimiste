@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .frequency {
   p {
-    font-size: 0.8em !important;
+    font-size: 0.86em !important;
   }
 }
 
@@ -53,7 +53,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .image-blocks-title {
   margin-top: 144px;
-  font-size:2rem !important;
 }
 
 .container {
@@ -65,17 +64,20 @@ h1, h2, h3, h4, h5, h6 {
 
 // section icon-row-bis
 
-  .icons-row-title {
-    font-size:3.5em !important;
+  .icons-row--background {
+    padding: 30px 0px !important;
+  }
+
+  .icons-row__title {
+    margin-bottom: 0px !important;
   }
 
   .icons-row-subtitle {
-    font-size:2em;
   }
 
   .icons-row__item {
+    margin-bottom: 0px !important;
     .icons-row__content {
-      font-size: 1.3em !important;
       max-width: 267px;
     }
   }
@@ -106,20 +108,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .icon-row-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  .subpart {
+  #subpart {
+    margin-top: 10px
   }
 
   .icons-row__text_over_icons {
     font-size: 1.5em;
+    margin-top: 17px;
   }
 
   .icons-row__title {
     font-size: 1.5em;
-    font-weight: 900;
   }
 
 
@@ -194,6 +197,13 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: solid black 1px;
   padding-bottom: 5px;
 }
+.abofreq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 140px;
+}
 
 
 
@@ -201,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 20px;
   padding-top: 0px!important;
-  width:519px;
+  width:504px;
 }
 
 #go-cart-btn {
@@ -221,19 +231,22 @@ h1, h2, h3, h4, h5, h6 {
   .carousel-main {
     background: #FAFAFA;
     margin-bottom: 40px;
-    width: 519px;
-    height: 833px;
+    width: 554px;
+    height: 913px;
     position:absolute;
     top:0;
 
 
     .flickity-button-icon {
-      display:none;
+      color:white;
+      .arrow {
+        fill: white !important;
+      }
     }
 
     .carousel-cell {
-      width: 519px;
-      height: 831px;
+      width: 554px;
+      height: 913px;
       margin-right: 10px;
       background: #8C8;
       border-radius: 5px;
@@ -245,6 +258,7 @@ h1, h2, h3, h4, h5, h6 {
   /* cell number */
 
   .carousel-nav {
+    display:none;
     background: #fff;
     margin-bottom: 40px;
     width:400px;
@@ -254,6 +268,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 49px;
 
       .previous {
+        left: -10px !important;
         padding-left: 0px !important;
         svg {
           margin-left: -11px;
@@ -261,6 +276,7 @@ h1, h2, h3, h4, h5, h6 {
       }
 
       .next {
+        right: -3px !important;
         padding-right: 0px !important;
       }
 
@@ -305,16 +321,48 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 
+//HP
+#shopify-section-1576238024737 {
+  .image-block {
+      /* height: 513px !important; */
+      background-size: cover;
+      /* max-width: 33.4%; */
+      height: 580px !important;
+      width: 100%;
+      max-width: 101%;
+
+      .button {
+        margin-bottom: 240px!important;
+      }
+  }
+
+  .image-block:last-child {
+    margin: 20px 20px 20px 10px;
+  }
+  .image-block:first-child {
+    margin: 20px 10px 20px 20px;
+  }
+
+  .image-blocks-title {
+    margin-top: 240px;
+    font-family: "Playfair Display",serif;
+  }
+
+}
+
+
+
 
 // abonnements
 
   .block_border{
-    border-left: solid 2px #333333;
-    border-right: solid 2px #333333;
+    border-left: solid 1px #333333;
+    border-right: solid 1px #333333;
   }
 
 
   .abonnements-items {
+    min-height: 350px;
     min-width: 160px;
     padding-right: 10px;
     padding-left: 10px;
@@ -359,6 +407,20 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @media (max-width: 1180px) {
+  .item-blocks {
+    flex-direction: row !important;
+    max-width:600px;
+  }
+
+  .routine-products {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+  }
+
+  .image-blocks {
+    flex-direction: row!important;
+  }
+
   .flex-center {
       flex-direction: column;
       align-items: center;
@@ -369,13 +431,42 @@ h1, h2, h3, h4, h5, h6 {
       width: 92vw;
   }
 
-  .block_border {
-    border-top: solid 2px #333333;
-    border-bottom: solid 2px #333333;
-    border-right: none;
-    border-left: none;
+
+  .image-blocks, .image-block {
+    width:100%;
+    max-width:100%;
   }
 
+
+  .carousel-nav {
+    display:none;
+  }
+
+  .carousel-main {
+    background: #FAFAFA;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 833px;
+    position:relative;
+  }
+
+  .product_description {
+    margin-top: 100px;
+  }
+}
+
+#text-module-rich-text2 {
+  .container {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+}
+
+@media (max-width: 540px) {
+
+  .one-hundred-height-hero {
+    min-height: 120vh !important;
+  }
   .abonnements-items {
     min-width: 160px;
     margin-top: 0px;
@@ -386,11 +477,42 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 30px;
   }
 
-  .image-blocks, .image-block {
-    width:100%;
-    max-width:100%;
+  .item-blocks {
+    flex-direction: column !important;
+  }
+
+  .item-block {
+    flex-direction: column !important;
+    margin: 0px !important;
+  }
+
+  .image-block:last-child {
+    margin: 0px !important;
+  }
+  .image-block:first-child {
+    margin: 0px !important;
+  }
+
+  .slide-content {
+    padding: 80px 0 !important;
+  }
+
+  .routine-products {
+    flex-direction: column !important;
+    justify-content: unset !important;
+  }
+
+  .block_border {
+    border-top: solid 2px #333333;
+    border-bottom: solid 2px #333333;
+    border-right: none;
+    border-left: none;
   }
 }
 
-
+@media (max-width: 600px) {
+   .image-blocks {
+    flex-direction: column!important;
+  }
+}
 

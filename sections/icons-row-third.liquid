@@ -4,6 +4,11 @@ Icons row
 
 {% assign background = section.settings.color_icons_bg %}
 {% assign color = section.settings.color_icons_text %}
+{% assign link = section.settings.link %}
+{% assign buttonPrimaryText = section.settings.cta_color %}
+{% assign textColor = section.settings.text_color %}
+{% assign buttonPrimaryBackground = section.settings.cta_bg %}
+{% assign buttonPrimaryBorder = section.settings.cta_border | default: 'transparent' %}
 
 {% if section.blocks.size > 0 %}
 <div data-section-id="{{ section.id }} no-margin-vertical" data-section-type="icons-row">
@@ -18,16 +23,16 @@ Icons row
 
 
         {% if row-title != blank %}
-            <h1 class="icons-row__title icons-row-title">{{ row-title }}</h1>
+            <h1 style="font-size: {{ section.settings.title_font_size }}px;" class="icons-row__title icons-row-title" >{{ row-title }}</h1>
         {% endif %}
         {% if subtitle != blank %}
           <div class="flex-center">
-            <h2 class="icons-row__title icons-row-subtitle">{{ subtitle }}</h4>
+            <h4 style="font-size: {{ section.settings.subtitle_font_size }}px;" class="icons-row__title icons-row-subtitle">{{ subtitle }}</h4>
           </div>
         {% endif %}
         {% if section.settings.show_long_text %}
           {% if text_over_icons != blank %}
-              <p class="icons-row__text_over_icons">{{ text_over_icons }}</p>
+              <p class="icons-row__text_over_icons" style="font-size: {{ section.settings.text_over_icons_font_size }}px;">{{ text_over_icons }}</p>
           {% endif %}
         {% endif %}
 
@@ -42,14 +47,14 @@ Icons row
             {%- capture icon -%}{%- for word in icon_words -%}{%- unless forloop.index == 1 -%}-{%- endunless -%}{{ word | lowercase | capitalize }}{%- endfor -%}{%- endcapture -%}
 
             <div class="icons-row__item {% if block.settings.show_borders %}icon-borders{% endif %}">
-              <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
+              <img style="height: {{ section.settings.icon_height }}px" src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
 
               {% if title != blank %}
-              <p class="icons-row__title">{{ title }}</p>
+              <p class="icons-row__title" style="font-size: {{ section.settings.block_title_font_size }}px;">{{ title }}</p>
               {% endif %}
 
               {% if content != blank %}
-              <p class="icons-row__content">{{ content }}</p>
+              <p class="icons-row__content" style="font-size: {{ section.settings.content_font_size }}px; font-weight: 400;">{{ content }}</p>
               {% endif %}
             </div>
           {% endfor %}
@@ -66,7 +71,7 @@ Icons row
 
       {% if section.settings.show_button %}
         <div class="flex-center">
-            <button style="color: {{ section.settings.text_color }}; background-color: {{ section.settings.btn_color }}">{{ sub-cta }}</button>
+          <a href="{{ link }}" class="button--primary button" style="color: {{ buttonPrimaryText }}; background-color: {{ buttonPrimaryBackground }}; border-color: {{ buttonPrimaryBorder }}">{{ sub-cta }}</a>
         </div>
       {% endif %}
 
@@ -79,7 +84,7 @@ Icons row
 
 {% schema %}
 {
-  "name": "Icons row third",
+  "name": "Icons row bis",
   "max_blocks": 6,
   "class": "icons-row-bis",
   "settings": [
@@ -102,10 +107,30 @@ Icons row
       "default": "Row - title "
     },
     {
+        "type":      "range",
+        "id":        "title_font_size",
+        "min":       16,
+        "max":        64,
+        "step":       1,
+        "unit":       "px",
+        "label":     "Title Font size",
+        "default":   16
+    },
+    {
       "type": "text",
       "id": "subtitle",
       "label": "Sous-titre",
       "default": "Sous-titrez ici"
+    },
+    {
+        "type":      "range",
+        "id":        "subtitle_font_size",
+        "min":       6,
+        "max":        32,
+        "step":       1,
+        "unit":       "px",
+        "label":     "Subtitle Font size",
+        "default":   12
     },
      {
       "type": "checkbox",
@@ -119,10 +144,30 @@ Icons row
       "default": "Modular is a powerful Shopify theme that will set you apart from the rest with Mosaic, Gallery, and Slideshow sections."
     },
     {
+        "type":      "range",
+        "id":        "text_over_icons_font_size",
+        "min":       8,
+        "max":        64,
+        "step":       1,
+        "unit":       "px",
+        "label":     "Text over icons Font size",
+        "default":   16
+    },
+    {
       "type": "text",
       "id": "subtext",
       "label": "Subtext",
       "default": "Subtext"
+    },
+    {
+        "type":      "range",
+        "id":        "icon_height",
+        "min":       16,
+        "max":        168,
+        "step":       2,
+        "unit":       "px",
+        "label":     "Size of the icons",
+        "default":   28
     },
      {
       "type": "checkbox",
@@ -136,18 +181,52 @@ Icons row
       "default": "En savoir plus"
     },
     {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#000000"
-    }
-    ,
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Primary button colors"
+    },
     {
       "type": "color",
-      "id": "btn_color",
-      "label": "Button color",
-      "default": "#FFFFFF"
-    }
+      "id": "cta_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg",
+      "label": "Background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "cta_border",
+      "label": "Border",
+      "default": "transparent"
+    },
+    {
+        "type":      "range",
+        "id":        "block_title_font_size",
+        "min":       6,
+        "max":        32,
+        "step":       1,
+        "unit":       "px",
+        "label":     "Title Font size",
+        "default":   16
+    },
+        {
+            "type":      "range",
+            "id":        "content_font_size",
+            "min":       6,
+            "max":        32,
+            "step":       1,
+            "unit":       "px",
+            "label":     "Content Font size",
+            "default":   8
+        }
   ],
   "blocks": [
     {
@@ -165,6 +244,11 @@ Icons row
           "label": "Title",
           "default": "Feature"
         },
+         {
+          "type": "checkbox",
+          "id": "title_strong",
+          "label": "Titre en gras"
+        },
         {
           "type": "textarea",
           "id": "content",
@@ -181,7 +265,7 @@ Icons row
   ],
   "presets": [
     {
-      "name": "Icons row",
+      "name": "Icons Row Custom2",
       "category": "Text",
       "blocks": [
         {

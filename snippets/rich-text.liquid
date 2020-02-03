@@ -15,14 +15,14 @@
 			{% include 'accent-line' %}
 
 			{% if content != blank %}
-				<div style="color: {{ text_color }}" class="rich-content size--small {% if cta == blank %}no-button{% endif %}">{{ content }}</div>
+				<div c style="color: {{ text_color }}" class="rich-content size--small {% if cta == blank %}no-button{% endif %}">{{ content }}</div>
 			{% endif %}
 		</div>
 
 		{% if cta != blank %}
 			<div class="row row-lg">
 				<div class="button-wrap">
-					<a href="{{ link }}" style="font-size: 1.5em !important;" class="button" title="{{ cta }}">{{ cta }}</a>
+					<a href="{{ link }}" style="font-size: 14px !important; background-color: {{ bg_color }}; color: {{ text_color }}" class="button" title="{{ cta }}">{{ cta }}</a>
 				</div>
 			</div>
 		{% endif %}
